@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Baby Steps - Your Mother Tongue, Your Superpower",
   description:
     "Baby Steps is a safe and joyful space where Ugandan children begin learning in their mother tongue.",
+  icons: {
+    icon: "/profile/copy-2-transparent.png",
+    shortcut: "/profile/copy-2-transparent.png",
+    apple: "/profile/copy-2-transparent.png",
+  },
 };
 
 export default function RootLayout({

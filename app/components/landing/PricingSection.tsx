@@ -2,27 +2,35 @@ const familyPlans = [
   {
     name: "Free",
     price: "UGX 0",
-    period: "always",
-    description: "Perfect for first steps in one language path.",
-    features: ["1 child profile", "Core literacy games", "Weekly progress summary"],
+    period: "forever",
+    description: "A gentle start for one child learning at home.",
+    features: [
+      "1 child profile",
+      "Access to Free learning units",
+      "Parent-friendly weekly progress snapshots",
+    ],
   },
   {
     name: "Basic",
-    price: "UGX 5,000",
+    price: "UGX 10,000",
     period: "per month",
-    description: "For families who want deeper practice at home.",
-    features: ["Up to 3 child profiles", "Offline lesson packs", "Parent tips and nudges"],
+    description: "Great for families that want more consistency and practice.",
+    features: [
+      "Up to 3 child profiles",
+      "Unlock Free + Basic learning units",
+      "Parent tips, nudges, and stronger progress tracking",
+    ],
     featured: true,
   },
   {
     name: "Premium",
-    price: "UGX 20,000",
+    price: "UGX 25,000",
     period: "per month",
-    description: "Full experience with advanced personalization.",
+    description: "Full access for families who want the complete learning journey.",
     features: [
-      "Up to 6 child profiles",
-      "All language paths",
-      "Detailed skill-level analytics",
+      "Unlimited child profiles",
+      "Unlock all available learning units",
+      "Detailed progress insights and achievement tracking",
     ],
   },
 ];
@@ -30,21 +38,21 @@ const familyPlans = [
 const schoolLicenses = [
   {
     tier: "Starter School License",
-    range: "Single school launch",
-    fit: "Guided rollout for one campus.",
-    details: "Teacher dashboard, assignment tools, and onboarding support.",
+    range: "Single campus rollout",
+    fit: "A strong first step for one school.",
+    details: "Term-based setup, teacher onboarding, and classroom-ready support.",
   },
   {
     tier: "Growth School License",
-    range: "Multi-class adoption",
-    fit: "Best for broader classroom coverage.",
-    details: "Shared content library, reporting views, and school admin controls.",
+    range: "Multi-class expansion",
+    fit: "Best for schools scaling across more classes.",
+    details: "Shared content access, school reporting, and admin-friendly controls.",
   },
   {
     tier: "District / Network License",
     range: "District or network rollout",
-    fit: "Coordinated implementation across multiple schools.",
-    details: "Centralized deployment planning, priority support, and governance tools.",
+    fit: "Coordinated delivery across multiple schools.",
+    details: "Central planning, team training, and priority implementation support.",
   },
 ];
 
@@ -56,8 +64,7 @@ export function PricingSection() {
           <span className="section-label">Pricing</span>
           <h2 className="section-title centered">Simple plans for families and schools</h2>
           <p className="section-subtitle centered">
-            Start small, scale as your child grows, and unlock school licensing for whole
-            classrooms.
+            Choose a home plan for your family or a school license for full classroom rollout.
           </p>
         </div>
 
@@ -85,8 +92,8 @@ export function PricingSection() {
           <div className="school-license-head">
             <h3 className="school-license-title">School Licensing</h3>
             <p className="school-license-copy">
-              Running a school or network? We support term-based licensing with rollout support,
-              teacher onboarding, and classroom analytics.
+              Running a school or network? We offer term-based licensing with guided onboarding,
+              teacher support, and flexible payment options for institutions.
             </p>
           </div>
 
