@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   description:
     "Baby Steps is a safe and joyful space where Ugandan children begin learning in their mother tongue.",
   icons: {
-    icon: "/profile/copy-2-transparent.png",
-    shortcut: "/profile/copy-2-transparent.png",
-    apple: "/profile/copy-2-transparent.png",
+    icon: "/profile/copy-3.jpg",
+    shortcut: "/profile/copy-3.jpg",
+    apple: "/profile/copy-3.jpg",
   },
 };
 
