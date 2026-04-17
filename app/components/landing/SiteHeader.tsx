@@ -24,9 +24,9 @@ export function SiteHeader() {
               </li>
             ))}
             <li>
-              <a className="nav-cta" href="#download">
+              <Link className="nav-cta" href="/waitlist">
                 Join Waitlist -&gt;
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

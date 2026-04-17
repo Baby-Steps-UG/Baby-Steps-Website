@@ -248,13 +248,10 @@ a {
   align-items: center;
   border-radius: 10px;
   display: inline-flex;
-  height: 52px;
   justify-content: center;
   line-height: 0;
-  overflow: hidden;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
-  width: 174px;
 }
 
 .app-store-link-block:hover,
@@ -269,12 +266,13 @@ a {
 }
 
 .app-store-button-ios {
-  height: 48px;
+  height: 52px;
+  width: 182px;
 }
 
 .app-store-button-google {
-  height: 60px;
-  margin: -4px -6px;
+  height: 52px;
+  width: 170px;
 }
 
 .hero-store-note {
@@ -1754,6 +1752,92 @@ a {
   width: 100%;
 }
 
+.waitlist-page-section {
+  background: linear-gradient(180deg, #e8f4fd 0%, #fff 100%);
+  min-height: calc(100vh - var(--sticky-stack-height));
+}
+
+.waitlist-page-inner {
+  max-width: 980px;
+}
+
+.waitlist-page-subtitle {
+  max-width: 680px;
+}
+
+.waitlist-page-frame-wrap {
+  margin: 30px auto 0;
+}
+
+.waitlist-page-embed {
+  background: rgb(255 255 255 / 95%);
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 18px 34px rgb(0 0 0 / 14%);
+  display: block;
+  height: 74vh;
+  min-height: 780px;
+  width: 100%;
+}
+
+.not-found-section {
+  align-items: center;
+  background: linear-gradient(180deg, #e8f4fd 0%, #fff 100%);
+  display: flex;
+  min-height: calc(100vh - var(--sticky-stack-height));
+}
+
+.not-found-card {
+  background: #fff;
+  border: 1px solid rgb(71 79 94 / 10%);
+  border-radius: 22px;
+  box-shadow: 0 22px 44px rgb(4 65 106 / 12%);
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 44px 34px;
+  text-align: center;
+}
+
+.not-found-code {
+  color: var(--blue);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.not-found-subtitle {
+  max-width: 560px;
+}
+
+.not-found-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 26px;
+}
+
+.not-found-link {
+  border: 1.5px solid rgb(2 116 187 / 22%);
+  border-radius: 50px;
+  color: var(--blue);
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 22px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.not-found-link:hover {
+  background: rgb(2 116 187 / 8%);
+  border-color: rgb(2 116 187 / 35%);
+  transform: translateY(-2px);
+}
+
 .store-badge-row {
   display: flex;
   flex-wrap: wrap;
@@ -1916,6 +2000,20 @@ a {
   font-weight: 500;
   line-height: 1.7;
   max-width: 260px;
+}
+
+.footer-email {
+  color: rgb(255 255 255 / 84%);
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-email:hover {
+  color: var(--gold);
 }
 
 .footer-col h4 {
@@ -2284,6 +2382,14 @@ a {
     min-height: 480px;
   }
 
+  .waitlist-page-embed {
+    min-height: 720px;
+  }
+
+  .not-found-card {
+    padding: 34px 24px;
+  }
+
   .language-game-card {
     padding: 22px;
   }
@@ -2335,7 +2441,7 @@ a {
   }
 
   .app-store-button-stack {
-    align-items: stretch;
+    align-items: flex-start;
     flex-direction: column;
     gap: 10px;
   }
@@ -2343,6 +2449,14 @@ a {
   .app-store-link-block,
   .google-play-link-block {
     justify-content: center;
+  }
+
+  .waitlist-page-embed {
+    min-height: 640px;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
   }
 
   .header-logo .brand-logo-combo {

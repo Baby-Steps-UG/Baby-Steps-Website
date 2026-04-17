@@ -42,8 +42,8 @@ export function HeroSection() {
                 src="/store/google-play-badge.png"
                 alt="Get it on Google Play"
                 className="app-store-button app-store-button-google"
-                width={646}
-                height={250}
+                width={564}
+                height={168}
                 unoptimized
               />
             </a>

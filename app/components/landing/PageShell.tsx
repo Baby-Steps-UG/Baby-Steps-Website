@@ -7,15 +7,16 @@ import { SiteHeader } from "./SiteHeader";
 
 interface PageShellProps {
   children: ReactNode;
+  showPersonalization?: boolean;
 }
 
-export function PageShell({ children }: PageShellProps) {
+export function PageShell({ children, showPersonalization = true }: PageShellProps) {
   return (
     <main className="landing-page">
       <SiteHeader />
       <AnnouncementBanner />
       {children}
-      <PersonalizationSection />
+      {showPersonalization ? <PersonalizationSection /> : null}
       <SiteFooter />
     </main>
   );

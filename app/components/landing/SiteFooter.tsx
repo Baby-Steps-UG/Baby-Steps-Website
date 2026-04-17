@@ -58,6 +58,9 @@ export function SiteFooter() {
               Helping every Ugandan child take their first steps into their mother tongue, one
               word, one game, one moment at a time.
             </p>
+            <a className="footer-email" href="mailto:hello@babystepslearn.com">
+              hello@babystepslearn.com
+            </a>
 
             <div className="social-row">
               {socialLinks.map((social) => (
