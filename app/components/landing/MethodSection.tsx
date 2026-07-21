@@ -2,7 +2,7 @@ const steps = [
   {
     kicker: "Start",
     title: "Choose a path",
-    description: "Create a child profile and choose a language that already belongs to their world.",
+    description: "Create a child profile and begin with Luganda—the first language path in Baby Steps.",
   },
   {
     kicker: "Explore",

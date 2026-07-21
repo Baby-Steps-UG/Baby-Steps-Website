@@ -1,44 +1,28 @@
 import Link from "next/link";
 
-const subjects = [
-  { title: "Luganda", region: "Central Uganda", tone: "blue" },
-  { title: "Runyankole", region: "Western Uganda", tone: "orange" },
-  { title: "Acholi", region: "Northern Uganda", tone: "gold" },
-  { title: "Lusoga", region: "Eastern Uganda", tone: "orange" },
-  { title: "Ateso", region: "North-Eastern Uganda", tone: "blue" },
-  { title: "Rutooro", region: "Western Uganda", tone: "gold" },
-  { title: "Lugbara", region: "West Nile", tone: "blue" },
-];
-
 export function SubjectsSection() {
   return (
     <section className="section languages-section" id="languages">
-      <div className="section-inner language-home-layout">
+      <div className="section-inner language-home-layout luganda-home-layout">
         <div className="language-home-copy">
-          <span className="section-label">Languages</span>
+          <span className="section-label">Our first language</span>
           <h2 className="section-title">
-            The language of home belongs <span className="accent-orange">everywhere.</span>
+            We’re beginning with <span className="accent-orange">Luganda.</span>
           </h2>
           <p className="section-subtitle">
-            Baby Steps is growing a joyful home for Uganda’s mother tongues—one carefully built
-            language path at a time.
+            One thoughtful language path at launch—full of familiar words, playful practice, and
+            stories that feel close to home. More Ugandan languages are part of the long-term vision.
           </p>
           <Link className="btn-dark" href="/languages">
-            Explore every language <span aria-hidden="true">→</span>
+            Explore the Luganda path <span aria-hidden="true">→</span>
           </Link>
         </div>
 
-        <div className="language-cloud" aria-label="Languages available in Baby Steps">
-          {subjects.map((subject, index) => (
-            <div className={`language-chip language-chip-${subject.tone}`} key={subject.title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{subject.title}</strong>
-              <small>{subject.region}</small>
-            </div>
-          ))}
-          <div className="language-chip language-chip-more">
-            <span>+</span><strong>More coming</strong><small>We’re just getting started</small>
-          </div>
+        <div className="luganda-home-card">
+          <span className="luganda-home-badge">Launch language · 01</span>
+          <div className="luganda-home-greeting"><small>Say hello</small><strong>Oli otya?</strong><span>How are you?</span></div>
+          <div className="luganda-home-promise"><i>✦</i><p><strong>Built deeply before broadly.</strong><br />More languages will follow with time and care.</p></div>
+          <div className="luganda-home-orbit" aria-hidden="true"><span /><span /><span /></div>
         </div>
       </div>
     </section>

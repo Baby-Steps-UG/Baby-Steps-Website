@@ -22,16 +22,16 @@ const visualCopyByVariant: Record<
     cardTitle: "This week’s gentle focus",
   },
   schools: {
-    note: "A joyful layer for the classroom",
-    stat: "1 path",
-    statLabel: "with room for every learner’s pace",
-    cardTitle: "Today’s class moment",
+    note: "The classroom chapter comes next",
+    stat: "Soon",
+    statLabel: "school pilots are part of our next chapter",
+    cardTitle: "Schools interest list is open",
   },
   languages: {
-    note: "Language is identity in action",
-    stat: "7 paths",
-    statLabel: "and a growing home for more",
-    cardTitle: "Listen. Say it. Own it.",
+    note: "Luganda first. Carefully built.",
+    stat: "1 path",
+    statLabel: "Luganda is where the journey begins",
+    cardTitle: "More languages, over time",
   },
   about: {
     note: "Made in Uganda, with purpose",
@@ -40,10 +40,10 @@ const visualCopyByVariant: Record<
     cardTitle: "Rooted · Joyful · Safe",
   },
   pricing: {
-    note: "Start small and grow naturally",
-    stat: "3 plans",
-    statLabel: "for different family rhythms",
-    cardTitle: "Simple. Clear. Supportive.",
+    note: "Clear plans are taking shape",
+    stat: "Soon",
+    statLabel: "family-friendly pricing before launch",
+    cardTitle: "No prices published yet",
   },
 };
 

@@ -7,13 +7,13 @@ export default function PricingPage() {
     <PageShell>
       <PageHero
         variant="pricing"
-        label="Pricing"
-        title="Simple plans for families and schools"
-        subtitle="Choose a plan that fits your family or school today, then scale as your learning goals grow."
+        label="Pricing · Coming Soon"
+        title="Simple plans are taking shape"
+        subtitle="We’re finalising the right mix of access, value, and flexibility for families. Clear prices will be shared before launch."
         highlights={[
-          "Family plans from free to premium",
-          "School licensing for classrooms and networks",
-          "Clear options with guided onboarding",
+          "No prices published yet",
+          "Family-friendly options in progress",
+          "Schools pricing will come later",
         ]}
       />
       <PricingSection />

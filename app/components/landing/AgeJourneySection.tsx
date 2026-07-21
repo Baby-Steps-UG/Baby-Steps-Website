@@ -23,7 +23,7 @@ const valueProps = [
     title: "Fits into real family life",
     description:
       "Start with a few minutes at home, build a classroom rhythm, and see clear progress as confidence grows one word at a time.",
-    note: "At home · At school · On the go",
+    note: "At home now · Classroom vision ahead",
     tone: "gold",
   },
 ];
@@ -65,7 +65,7 @@ export function AgeJourneySection() {
           <div>
             <span>Educator-informed</span>
             <span>Child-safe by design</span>
-            <span>Classroom-ready</span>
+            <span>Classroom vision ahead</span>
           </div>
         </div>
       </div>

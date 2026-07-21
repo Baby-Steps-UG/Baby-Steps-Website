@@ -13,7 +13,7 @@ export default function AboutPage() {
         highlights={[
           "Rooted in local culture",
           "Warm, joyful learning experiences",
-          "Trusted by families and schools",
+          "Built for families, listening to schools",
         ]}
       />
       <AboutPageContent />

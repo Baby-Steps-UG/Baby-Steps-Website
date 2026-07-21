@@ -31,7 +31,7 @@ export function AboutPageContent() {
           <div className="audience-intro"><span className="section-label section-label-light">Built together</span><h2>Children at the centre. Grown-ups beside them.</h2></div>
           <article><span>For children</span><h3>“I can do this.”</h3><p>A companion for curiosity, listening, speaking, and early reading without fear of mistakes.</p></article>
           <article><span>For parents</span><h3>“I know what comes next.”</h3><p>A practical way to protect language identity while supporting a joyful learning rhythm.</p></article>
-          <article><span>For teachers</span><h3>“This fits my classroom.”</h3><p>A familiar, flexible tool for foundational literacy and language confidence at scale.</p></article>
+          <article><span>For teachers</span><h3>“Help us shape what’s next.”</h3><p>A future classroom experience informed by teachers, thoughtful pilots, and real school routines.</p></article>
         </div>
       </section>
     </>

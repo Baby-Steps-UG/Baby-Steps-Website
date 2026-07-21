@@ -7,13 +7,13 @@ export default function ForSchoolsPage() {
     <PageShell>
       <PageHero
         variant="schools"
-        label="For Schools"
-        title="Classroom-ready language learning for Ugandan schools"
-        subtitle="Support foundational literacy with a joyful, culturally familiar experience children and teachers can use every term."
+        label="For Schools · Coming Soon"
+        title="The classroom chapter is coming next"
+        subtitle="Baby Steps for schools is not available yet. We’re listening first, shaping a Luganda-first classroom vision with the care teachers and learners deserve."
         highlights={[
-          "Simple onboarding for teachers",
-          "Learner-friendly classroom flow",
-          "School and network licensing options",
+          "Teacher conversations first",
+          "Thoughtful pilots before rollout",
+          "Schools interest list now open",
         ]}
       />
       <SchoolsPageContent />

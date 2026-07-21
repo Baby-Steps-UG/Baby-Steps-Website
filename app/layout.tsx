@@ -17,12 +17,10 @@ export const metadata: Metadata = {
   description:
     "Joyful mother-tongue learning for Ugandan children ages 3–12 through stories, games, songs, and everyday discovery.",
   keywords: [
-    "Ugandan languages",
+      "Luganda learning",
     "mother tongue learning",
     "children's learning app",
     "Luganda",
-    "Runyankole",
-    "Acholi",
   ],
   icons: {
     icon: "/profile/copy-3.jpg",

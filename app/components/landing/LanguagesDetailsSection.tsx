@@ -1,52 +1,90 @@
-import { languageProfiles, type QuizLanguage } from "./languageData";
+const learningMoments = [
+  {
+    number: "01",
+    title: "Hear it",
+    detail: "Children meet familiar Luganda words through listening, stories, and clear repetition.",
+  },
+  {
+    number: "02",
+    title: "Say it",
+    detail: "Friendly prompts help children try greetings, family words, and everyday phrases aloud.",
+  },
+  {
+    number: "03",
+    title: "Play with it",
+    detail: "Matching, quizzes, and word games give new vocabulary a joyful place to stick.",
+  },
+  {
+    number: "04",
+    title: "Bring it home",
+    detail: "Small prompts make it easier to carry learning into real family conversations.",
+  },
+];
 
-interface LanguagesDetailsSectionProps {
-  selectedLanguage: QuizLanguage;
-  onSelectLanguage: (language: QuizLanguage) => void;
-}
-
-export function LanguagesDetailsSection({
-  selectedLanguage,
-  onSelectLanguage,
-}: LanguagesDetailsSectionProps) {
+export function LanguagesDetailsSection() {
   return (
-    <section className="section themed-section">
-      <div className="section-inner">
-        <div className="section-heading centered">
-          <span className="section-label">Languages We Support</span>
-          <h2 className="section-title centered">A growing home for Ugandan mother tongues</h2>
-          <p className="section-subtitle centered">
-            Each language path is crafted to feel culturally familiar, playful, and age-appropriate
-            for learners from 3 to 12.
-          </p>
+    <>
+      <section className="section luganda-focus-section">
+        <div className="section-inner luganda-focus-layout">
+          <div className="luganda-word-card">
+            <span className="luganda-status"><i /> Available at launch</span>
+            <p className="luganda-word">Oli otya?</p>
+            <p className="luganda-meaning">How are you?</p>
+            <div className="luganda-soundline" aria-hidden="true">
+              <i /><i /><i /><i /><i /><i /><i /><i /><i />
+            </div>
+            <small>Listen · Repeat · Remember</small>
+          </div>
+
+          <div className="luganda-focus-copy">
+            <span className="section-label">Luganda first</span>
+            <h2 className="section-title">One language, built with real care.</h2>
+            <p className="section-subtitle">
+              Baby Steps begins with Luganda so we can make the first learning path warm, useful,
+              and genuinely delightful before we expand. We would rather build one language well
+              than rush many languages at once.
+            </p>
+            <div className="luganda-details">
+              <span><strong>For ages 3–12</strong>Age-aware learning moments</span>
+              <span><strong>Rooted in daily life</strong>Words children can use at home</span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <p className="languages-scroll-hint">Swipe and tap a language card to load its quiz.</p>
-
-        <div className="languages-scroll-row" aria-label="Select quiz language" role="list">
-          {languageProfiles.map((language) => {
-            const isActive = selectedLanguage === language.name;
-
-            return (
-              <button
-                key={language.name}
-                aria-pressed={isActive}
-                className={`language-scroll-card ${isActive ? "active" : ""}`.trim()}
-                onClick={() => onSelectLanguage(language.name)}
-                role="listitem"
-                type="button"
-              >
-                <span className="language-scroll-tag">Tap to play quiz</span>
-                <h3 className="language-scroll-title">{language.name}</h3>
-                <p className="language-scroll-region">{language.region}</p>
-                <p className="language-scroll-focus">{language.focus}</p>
-              </button>
-            );
-          })}
+      <section className="section language-moments-section">
+        <div className="section-inner">
+          <div className="section-heading split-heading">
+            <div><span className="section-label">The Luganda path</span><h2 className="section-title">From hearing a word to owning it.</h2></div>
+            <p className="section-subtitle">Each little loop builds familiarity without turning a child’s home language into homework.</p>
+          </div>
+          <div className="language-moments-grid">
+            {learningMoments.map((moment) => (
+              <article key={moment.title}><span>{moment.number}</span><h3>{moment.title}</h3><p>{moment.detail}</p></article>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <p className="languages-selected-note">Current quiz language: {selectedLanguage}</p>
-      </div>
-    </section>
+      <section className="section language-future-section">
+        <div className="section-inner language-future-card">
+          <div className="language-future-copy">
+            <span className="section-label section-label-light">The wider vision</span>
+            <h2>Luganda is the beginning—not the boundary.</h2>
+            <p>
+              Over time, we aim to welcome more Ugandan languages into Baby Steps. Every new path
+              will need community insight, careful language work, and the same joyful standard.
+            </p>
+          </div>
+          <div className="language-roadmap" aria-label="Language rollout direction">
+            <div className="language-roadmap-step active"><span>Now</span><strong>Luganda</strong><small>Our launch language</small></div>
+            <div className="language-roadmap-line" aria-hidden="true" />
+            <div className="language-roadmap-step"><span>Next</span><strong>Listen & learn</strong><small>Work with communities</small></div>
+            <div className="language-roadmap-line" aria-hidden="true" />
+            <div className="language-roadmap-step"><span>Future</span><strong>Grow carefully</strong><small>More languages over time</small></div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -8,9 +8,9 @@ const footerColumns = [
     title: "Explore",
     links: [
       { label: "For Parents", href: "/for-parents" },
-      { label: "For Schools", href: "/for-schools" },
-      { label: "Languages", href: "/languages" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "For Schools (Soon)", href: "/for-schools" },
+      { label: "Luganda First", href: "/languages" },
+      { label: "Pricing (Soon)", href: "/pricing" },
     ],
   },
   {

@@ -8,9 +8,9 @@ import { BrandLogo } from "./BrandLogo";
 
 const navItems = [
   { label: "For Parents", href: "/for-parents" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "For Schools", href: "/for-schools" },
-  { label: "Languages", href: "/languages" },
+  { label: "Pricing · Soon", href: "/pricing" },
+  { label: "Schools · Soon", href: "/for-schools" },
+  { label: "Luganda", href: "/languages" },
   { label: "About", href: "/about" },
 ];
 

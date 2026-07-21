@@ -1567,6 +1567,248 @@ img {
 .not-found-actions { align-items: center; display: flex; gap: 20px; justify-content: center; }
 .not-found-link { color: var(--blue); font-weight: 700; }
 
+/* Luganda-first language story */
+.luganda-home-layout { align-items: center; }
+
+.luganda-home-card {
+  background: var(--blue);
+  border-radius: 34px;
+  color: #fff;
+  min-height: 510px;
+  overflow: hidden;
+  padding: 32px;
+  position: relative;
+  transform: rotate(2deg);
+}
+
+.luganda-home-card::before {
+  background: var(--gold);
+  border-radius: 50%;
+  content: "";
+  height: 330px;
+  position: absolute;
+  right: -85px;
+  top: 76px;
+  width: 330px;
+}
+
+.luganda-home-badge {
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.luganda-home-greeting {
+  display: flex;
+  flex-direction: column;
+  margin-top: 86px;
+  position: relative;
+  z-index: 2;
+}
+
+.luganda-home-greeting small {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.luganda-home-greeting strong {
+  font-size: clamp(3.4rem, 6vw, 5.6rem);
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+  margin: 8px 0 12px;
+}
+
+.luganda-home-greeting > span { color: var(--gold); font-size: 1rem; font-weight: 700; }
+
+.luganda-home-promise {
+  align-items: center;
+  background: #fff;
+  border-radius: 18px;
+  bottom: 28px;
+  color: var(--ink);
+  display: flex;
+  gap: 12px;
+  left: 28px;
+  padding: 14px 16px;
+  position: absolute;
+  right: 28px;
+  z-index: 2;
+}
+
+.luganda-home-promise i { color: var(--orange); font-style: normal; font-size: 1.3rem; }
+.luganda-home-promise p { color: var(--muted); font-size: 0.68rem; line-height: 1.45; }
+.luganda-home-promise strong { color: var(--ink); }
+
+.luganda-home-orbit { inset: 0; position: absolute; }
+.luganda-home-orbit span { border: 1px dashed rgba(255, 255, 255, 0.25); border-radius: 50%; position: absolute; }
+.luganda-home-orbit span:first-child { height: 190px; right: 22px; top: 135px; width: 190px; }
+.luganda-home-orbit span:nth-child(2) { height: 250px; right: -8px; top: 105px; width: 250px; }
+.luganda-home-orbit span:last-child { height: 310px; right: -38px; top: 75px; width: 310px; }
+
+.luganda-focus-section { background: var(--paper); }
+.luganda-focus-layout { align-items: center; display: grid; gap: 86px; grid-template-columns: 0.85fr 1.15fr; }
+
+.luganda-word-card {
+  background: var(--gold);
+  border-radius: 32px;
+  min-height: 520px;
+  overflow: hidden;
+  padding: 30px;
+  position: relative;
+}
+
+.luganda-word-card::after {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  content: "";
+  height: 310px;
+  left: -110px;
+  position: absolute;
+  top: 130px;
+  width: 310px;
+}
+
+.luganda-status {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.67rem;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.luganda-status i { background: #4aa86b; border-radius: 50%; height: 7px; margin-right: 7px; width: 7px; }
+.luganda-word { font-size: clamp(3.8rem, 7vw, 6.4rem); font-weight: 700; letter-spacing: -0.075em; line-height: 0.9; margin-top: 108px; position: relative; z-index: 1; }
+.luganda-meaning { color: rgba(71, 79, 94, 0.7); font-size: 1rem; font-weight: 700; margin-top: 15px; position: relative; z-index: 1; }
+
+.luganda-soundline { align-items: center; display: flex; gap: 5px; height: 55px; margin-top: 42px; position: relative; z-index: 1; }
+.luganda-soundline i { background: var(--blue); border-radius: 99px; height: 15px; width: 5px; }
+.luganda-soundline i:nth-child(2n) { height: 32px; }
+.luganda-soundline i:nth-child(3n) { height: 48px; }
+.luganda-word-card > small { color: rgba(71, 79, 94, 0.68); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; position: relative; text-transform: uppercase; z-index: 1; }
+
+.luganda-focus-copy .section-subtitle { margin-top: 22px; }
+.luganda-details { border-top: 1px solid var(--line); display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); margin-top: 32px; padding-top: 25px; }
+.luganda-details span { color: var(--muted); font-size: 0.7rem; line-height: 1.45; }
+.luganda-details strong { color: var(--ink); display: block; font-size: 0.82rem; margin-bottom: 4px; }
+
+.language-moments-section { background: var(--cream); }
+.language-moments-grid { display: grid; gap: 1px; grid-template-columns: repeat(4, 1fr); }
+.language-moments-grid article { background: var(--paper); border: 1px solid rgba(71, 79, 94, 0.06); min-height: 300px; padding: 26px; }
+.language-moments-grid article:first-child { border-radius: 24px 0 0 24px; }
+.language-moments-grid article:last-child { border-radius: 0 24px 24px 0; }
+.language-moments-grid article > span { color: var(--orange); font-size: 0.68rem; font-weight: 700; }
+.language-moments-grid h3 { font-size: 1.4rem; letter-spacing: -0.03em; margin: 82px 0 12px; }
+.language-moments-grid p { color: var(--muted); font-size: 0.8rem; line-height: 1.65; }
+
+.language-future-section { background: var(--paper); padding-top: 0; }
+.language-future-card { background: var(--ink); border-radius: 32px; color: #fff; display: grid; gap: 60px; grid-template-columns: 0.9fr 1.1fr; overflow: hidden; padding: 52px; position: relative; }
+.language-future-card::after { border: 2px solid rgba(255, 255, 255, 0.08); border-radius: 50%; content: ""; height: 330px; position: absolute; right: -170px; top: -170px; width: 330px; }
+.language-future-copy { position: relative; z-index: 1; }
+.language-future-copy h2 { font-size: clamp(2.5rem, 4vw, 4.2rem); letter-spacing: -0.055em; line-height: 0.98; }
+.language-future-copy > p { color: rgba(255, 255, 255, 0.64); font-size: 0.88rem; line-height: 1.75; margin-top: 20px; }
+
+.language-roadmap { align-items: center; display: grid; gap: 10px; grid-template-columns: 1fr 24px 1fr 24px 1fr; position: relative; z-index: 1; }
+.language-roadmap-step { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 18px; min-height: 165px; padding: 18px; }
+.language-roadmap-step.active { background: var(--blue); }
+.language-roadmap-step > span { color: var(--gold); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.language-roadmap-step strong { display: block; font-size: 0.9rem; margin-top: 48px; }
+.language-roadmap-step small { color: rgba(255, 255, 255, 0.58); display: block; font-size: 0.6rem; margin-top: 5px; }
+.language-roadmap-line { border-top: 1px dashed rgba(255, 255, 255, 0.28); }
+
+/* Schools coming soon */
+.schools-coming-intro { background: var(--paper); }
+.schools-coming-banner { align-items: center; background: #e7f3f9; border-radius: 30px; display: grid; gap: 36px; grid-template-columns: 0.95fr 1.4fr 1fr; min-height: 300px; overflow: hidden; padding: 42px; position: relative; }
+.schools-coming-banner > div,
+.schools-coming-banner > p { position: relative; z-index: 1; }
+.schools-coming-banner h2 { font-size: clamp(2rem, 3.8vw, 3.7rem); letter-spacing: -0.055em; line-height: 1; }
+.schools-coming-banner > p { color: var(--muted); font-size: 0.84rem; line-height: 1.75; }
+.coming-orbit { height: 170px; position: relative; width: 170px; z-index: 1; }
+.coming-orbit::before { background: var(--gold); border-radius: 50%; content: "Soon"; display: grid; font-size: 1.2rem; font-weight: 700; inset: 25px; place-items: center; position: absolute; }
+.coming-orbit i { border: 1px dashed rgba(2, 116, 187, 0.35); border-radius: 50%; inset: 0; position: absolute; }
+.coming-orbit i:nth-child(2) { inset: 14px; }
+.coming-orbit i:nth-child(3) { inset: 38px; }
+
+.school-principle-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 20px; }
+.school-principle-grid article { border: 1px solid var(--line); border-radius: 24px; min-height: 310px; padding: 26px; }
+.school-principle-grid article > div { align-items: center; display: flex; justify-content: space-between; }
+.school-principle-grid article > div span { color: var(--orange); font-size: 0.7rem; font-weight: 700; }
+.school-principle-grid article > div small { background: rgba(2, 116, 187, 0.1); border-radius: 999px; color: var(--blue); font-size: 0.63rem; font-weight: 700; padding: 6px 9px; text-transform: uppercase; }
+.school-principle-grid h3 { font-size: 1.5rem; letter-spacing: -0.035em; margin: 82px 0 13px; }
+.school-principle-grid p { color: var(--muted); font-size: 0.82rem; line-height: 1.7; }
+
+.school-preview-section { background: var(--blue-deep); color: #fff; overflow: hidden; }
+.school-preview-layout { align-items: center; display: grid; gap: 60px; grid-template-columns: 0.75fr 1.25fr; }
+.school-preview-copy h2 { font-size: clamp(2.7rem, 4.5vw, 4.6rem); letter-spacing: -0.06em; line-height: 0.96; }
+.school-preview-copy > p { color: rgba(255, 255, 255, 0.68); font-size: 0.9rem; line-height: 1.75; margin: 23px 0 28px; }
+.school-preview-screen { background: #fff; border: 8px solid #fff; border-radius: 24px; box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22); padding-top: 38px; position: relative; transform: rotate(2deg); }
+.school-preview-screen img { display: block; height: auto; width: 100%; }
+.school-preview-stamp { background: var(--gold); border-radius: 999px; color: var(--ink); font-size: 0.62rem; font-weight: 700; left: 14px; padding: 7px 10px; position: absolute; top: 8px; }
+
+.school-roadmap-section { background: var(--cream); }
+.school-coming-roadmap { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+.school-coming-roadmap article { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; min-height: 260px; padding: 26px; }
+.school-coming-roadmap article.active { background: var(--blue); color: #fff; }
+.school-coming-roadmap article > span { color: var(--orange); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.school-coming-roadmap article.active > span { color: var(--gold); }
+.school-coming-roadmap h3 { font-size: 1.45rem; letter-spacing: -0.035em; margin: 62px 0 12px; }
+.school-coming-roadmap p { color: var(--muted); font-size: 0.8rem; line-height: 1.65; }
+.school-coming-roadmap article.active p { color: rgba(255, 255, 255, 0.7); }
+.school-interest-card { align-items: center; background: var(--gold); border-radius: 26px; display: flex; gap: 35px; justify-content: space-between; margin-top: 54px; padding: 36px 40px; }
+.school-interest-card > div > span { color: rgba(71, 79, 94, 0.65); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.school-interest-card h3 { font-size: 1.65rem; letter-spacing: -0.035em; margin: 6px 0; }
+.school-interest-card p { color: rgba(71, 79, 94, 0.72); font-size: 0.78rem; line-height: 1.55; max-width: 650px; }
+.school-interest-card > a { background: var(--ink); border-radius: 999px; color: #fff; flex: 0 0 auto; font-size: 0.78rem; font-weight: 700; padding: 14px 18px; text-decoration: none; }
+
+/* Pricing coming soon */
+.pricing-coming-section { background: var(--paper); }
+.pricing-coming-hero { align-items: center; background: var(--blue); border-radius: 34px; color: #fff; display: grid; gap: 70px; grid-template-columns: 1.2fr 0.8fr; min-height: 510px; overflow: hidden; padding: 56px; position: relative; }
+.pricing-coming-hero::before { border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 50%; content: ""; height: 420px; position: absolute; right: -90px; top: -140px; width: 420px; }
+.pricing-coming-copy { position: relative; z-index: 1; }
+.pricing-coming-copy h2 { font-size: clamp(3rem, 5vw, 5rem); letter-spacing: -0.065em; line-height: 0.94; }
+.pricing-coming-copy > p { color: rgba(255, 255, 255, 0.7); font-size: 0.94rem; line-height: 1.75; margin: 24px 0 30px; max-width: 620px; }
+.pricing-calculator { background: var(--cream); border: 8px solid var(--ink); border-radius: 32px; box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18); padding: 20px; position: relative; transform: rotate(5deg); z-index: 1; }
+.pricing-calculator-screen { background: var(--ink); border-radius: 18px; color: #fff; display: flex; flex-direction: column; min-height: 155px; padding: 22px; }
+.pricing-calculator-screen small { color: var(--gold); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.pricing-calculator-screen strong { font-size: 2.8rem; letter-spacing: 0.05em; margin: 20px 0 7px; }
+.pricing-calculator-screen span { color: rgba(255, 255, 255, 0.58); font-size: 0.66rem; }
+.pricing-calculator-keys { display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+.pricing-calculator-keys i { background: var(--gold); border-radius: 12px; display: block; height: 45px; }
+.pricing-calculator-keys i:nth-child(3n + 2) { background: var(--orange); }
+.pricing-calculator-keys i:nth-child(3n) { background: #dfe9ee; }
+
+.pricing-shape-heading { margin-top: 98px; }
+.pricing-direction-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+.pricing-direction-grid article { border: 1px solid var(--line); border-radius: 28px; display: flex; flex-direction: column; min-height: 500px; padding: 28px; }
+.pricing-direction-grid article.featured { background: #fff3d3; border-color: rgba(248, 194, 62, 0.45); transform: translateY(-15px); }
+.pricing-direction-top { align-items: center; display: flex; justify-content: space-between; }
+.pricing-direction-top > span { color: var(--orange); font-size: 0.68rem; font-weight: 700; }
+.pricing-direction-top small { background: var(--cream); border-radius: 999px; color: var(--muted); font-size: 0.56rem; font-weight: 700; padding: 6px 8px; }
+.pricing-direction-grid h3 { font-size: 2rem; letter-spacing: -0.045em; margin: 55px 0 12px; }
+.pricing-direction-grid article > p { color: var(--muted); font-size: 0.82rem; line-height: 1.65; min-height: 72px; }
+.pricing-direction-grid ul { border-top: 1px solid var(--line); display: grid; gap: 11px; list-style: none; margin-top: 24px; padding-top: 22px; }
+.pricing-direction-grid li { color: var(--muted); font-size: 0.72rem; font-weight: 600; }
+.pricing-placeholder { border-top: 1px dashed var(--line); display: flex; flex-direction: column; margin-top: auto; padding-top: 22px; }
+.pricing-placeholder strong { color: var(--blue); font-size: 1.05rem; }
+.pricing-placeholder span { color: var(--muted); font-size: 0.62rem; margin-top: 4px; }
+.pricing-principles { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 70px; }
+.pricing-principles > div { padding: 28px; }
+.pricing-principles > div + div { border-left: 1px solid var(--line); }
+.pricing-principles span { color: var(--orange); display: block; font-size: 0.64rem; font-weight: 700; margin-bottom: 18px; }
+.pricing-principles strong { display: block; font-size: 0.9rem; }
+.pricing-principles p { color: var(--muted); font-size: 0.7rem; line-height: 1.5; margin-top: 6px; }
+
 @media (max-width: 1050px) {
   .nav-links { gap: 18px; }
   .nav-links a:not(.nav-cta) { font-size: 0.78rem; }
@@ -1712,6 +1954,30 @@ img {
 
   .languages-scroll-row { grid-template-columns: repeat(2, 1fr); }
   .legal-layout { gap: 40px; grid-template-columns: 190px minmax(0, 1fr); }
+
+  .luganda-focus-layout,
+  .language-future-card,
+  .school-preview-layout,
+  .pricing-coming-hero { grid-template-columns: 1fr; }
+
+  .luganda-word-card { max-width: 560px; width: 100%; }
+  .language-moments-grid { gap: 12px; grid-template-columns: repeat(2, 1fr); }
+  .language-moments-grid article { border-radius: 22px !important; }
+  .language-roadmap { margin-top: 10px; }
+
+  .schools-coming-banner { grid-template-columns: 180px 1fr; }
+  .schools-coming-banner > p { grid-column: 1 / -1; }
+  .school-principle-grid,
+  .school-coming-roadmap,
+  .pricing-direction-grid { grid-template-columns: 1fr; }
+  .school-principle-grid article { min-height: 250px; }
+  .school-principle-grid h3 { margin-top: 50px; }
+  .school-interest-card { align-items: flex-start; flex-direction: column; }
+
+  .pricing-calculator { max-width: 390px; width: 100%; }
+  .pricing-direction-grid article.featured { transform: none; }
+  .pricing-principles { grid-template-columns: 1fr; }
+  .pricing-principles > div + div { border-left: 0; border-top: 1px solid var(--line); }
 }
 
 @media (max-width: 600px) {
@@ -1826,6 +2092,38 @@ img {
 
   .not-found-card { padding: 48px 20px; }
   .not-found-actions { align-items: stretch; flex-direction: column; }
+
+  .luganda-home-card { min-height: 470px; padding: 24px; transform: none; }
+  .luganda-home-greeting { margin-top: 74px; }
+  .luganda-home-promise { bottom: 20px; left: 20px; right: 20px; }
+  .luganda-focus-layout { gap: 48px; }
+  .luganda-word-card { min-height: 440px; padding: 24px; }
+  .luganda-word { margin-top: 82px; }
+  .luganda-details { grid-template-columns: 1fr; }
+  .language-moments-grid { grid-template-columns: 1fr; }
+  .language-moments-grid article { min-height: 235px; }
+  .language-moments-grid h3 { margin-top: 48px; }
+  .language-future-card { gap: 35px; padding: 34px 24px; }
+  .language-roadmap { align-items: stretch; grid-template-columns: 1fr; }
+  .language-roadmap-line { border-left: 1px dashed rgba(255, 255, 255, 0.28); border-top: 0; height: 22px; margin-left: 24px; }
+  .language-roadmap-step { min-height: 140px; }
+  .language-roadmap-step strong { margin-top: 34px; }
+
+  .schools-coming-banner { grid-template-columns: 1fr; padding: 28px 22px; }
+  .schools-coming-banner > p { grid-column: auto; }
+  .coming-orbit { height: 140px; width: 140px; }
+  .school-preview-screen { border-width: 5px; padding-top: 48px; transform: none; }
+  .school-preview-stamp { line-height: 1.3; right: 10px; }
+  .school-interest-card { padding: 28px 22px; }
+  .school-interest-card > a { text-align: center; width: 100%; }
+
+  .pricing-coming-hero { gap: 42px; padding: 38px 24px; }
+  .pricing-coming-copy h2 { font-size: 3rem; }
+  .pricing-calculator { max-width: 320px; transform: rotate(2deg); }
+  .pricing-shape-heading { margin-top: 72px; }
+  .pricing-direction-top { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .pricing-direction-grid article { min-height: 460px; padding: 24px; }
+  .pricing-direction-grid h3 { margin-top: 38px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

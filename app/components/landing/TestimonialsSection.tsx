@@ -9,10 +9,10 @@ const testimonials = [
   },
   {
     quote:
-      "Finally, an app that connects to our curriculum and our culture. My P1 class loves the games.",
+      "The Luganda-first focus is thoughtful. Build that path well, then let schools help shape what comes next.",
     initials: "MT",
     name: "Mr. Tumusiime",
-    role: "Primary 1 teacher · Mbarara",
+    role: "Educator perspective · Mbarara",
     tone: "blue",
   },
   {

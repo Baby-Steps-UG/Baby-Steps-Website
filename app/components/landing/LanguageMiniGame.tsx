@@ -70,9 +70,9 @@ export function LanguageMiniGame({ language }: LanguageMiniGameProps) {
       <div className="section-inner">
         <div className="section-heading centered">
           <span className="section-label">Mini Game</span>
-          <h2 className="section-title centered">Try a quick {language} challenge</h2>
+          <h2 className="section-title centered">Take a tiny Luganda step</h2>
           <p className="section-subtitle centered">
-            This quiz changes with the language card you select above.
+            Three quick questions. No pressure—just a playful taste of the journey.
           </p>
         </div>
 

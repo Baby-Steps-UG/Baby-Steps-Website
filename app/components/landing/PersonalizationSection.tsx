@@ -9,7 +9,7 @@ export function PersonalizationSection() {
           <span className="section-label section-label-light">Coming soon</span>
           <h2>Ready for their next little step?</h2>
           <p>
-            Join families and schools waiting to bring joyful mother-tongue learning into every day.
+            Join families waiting to bring joyful Luganda learning into every day.
             Early explorers receive a 2-month Premium trial at launch.
           </p>
           <Link className="btn-gold" href="/waitlist">

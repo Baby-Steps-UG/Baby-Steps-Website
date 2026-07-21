@@ -30,7 +30,7 @@ export function HeroSection() {
           </div>
 
           <div className="hero-trust-row" aria-label="Baby Steps benefits">
-            <span><b>7</b> Ugandan languages</span>
+            <span><b>Luganda</b> first at launch</span>
             <span><b>10 min</b> playful sessions</span>
             <span><b>0</b> ads for children</span>
           </div>
