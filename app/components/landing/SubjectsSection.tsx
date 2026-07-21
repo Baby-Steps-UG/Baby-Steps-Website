@@ -1,58 +1,44 @@
+import Link from "next/link";
+
 const subjects = [
-  {
-    title: "🗣️ Luganda",
-    tone: "blue",
-  },
-  {
-    title: "🗣️ Runyankole",
-    tone: "orange",
-  },
-  {
-    title: "🗣️ Acholi",
-    tone: "gold",
-  },
-  {
-    title: "🗣️ Lusoga",
-    tone: "blue",
-  },
-  {
-    title: "🗣️ Ateso",
-    tone: "orange",
-  },
-  {
-    title: "🗣️ Rutooro",
-    tone: "gold",
-  },
-  {
-    title: "🗣️ Lugbara",
-    tone: "blue",
-  },
-  {
-    title: "🗣️ More coming...",
-    tone: "orange",
-  },
+  { title: "Luganda", region: "Central Uganda", tone: "blue" },
+  { title: "Runyankole", region: "Western Uganda", tone: "orange" },
+  { title: "Acholi", region: "Northern Uganda", tone: "gold" },
+  { title: "Lusoga", region: "Eastern Uganda", tone: "orange" },
+  { title: "Ateso", region: "North-Eastern Uganda", tone: "blue" },
+  { title: "Rutooro", region: "Western Uganda", tone: "gold" },
+  { title: "Lugbara", region: "West Nile", tone: "blue" },
 ];
 
 export function SubjectsSection() {
   return (
     <section className="section languages-section" id="languages">
-      <div className="section-inner">
-        <div className="section-heading centered">
+      <div className="section-inner language-home-layout">
+        <div className="language-home-copy">
           <span className="section-label">Languages</span>
           <h2 className="section-title">
-            Uganda&apos;s languages, <span className="accent-orange">celebrated</span>
+            The language of home belongs <span className="accent-orange">everywhere.</span>
           </h2>
           <p className="section-subtitle">
-            We believe every child deserves to learn in the language of their heart.
+            Baby Steps is growing a joyful home for Uganda’s mother tongues—one carefully built
+            language path at a time.
           </p>
+          <Link className="btn-dark" href="/languages">
+            Explore every language <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
-        <div className="lang-pills">
-          {subjects.map((subject) => (
-            <span className={`lang-pill ${subject.tone}`} key={subject.title}>
-              {subject.title}
-            </span>
+        <div className="language-cloud" aria-label="Languages available in Baby Steps">
+          {subjects.map((subject, index) => (
+            <div className={`language-chip language-chip-${subject.tone}`} key={subject.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{subject.title}</strong>
+              <small>{subject.region}</small>
+            </div>
           ))}
+          <div className="language-chip language-chip-more">
+            <span>+</span><strong>More coming</strong><small>We’re just getting started</small>
+          </div>
         </div>
       </div>
     </section>

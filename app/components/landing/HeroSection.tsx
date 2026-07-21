@@ -1,72 +1,68 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
     <section className="hero" id="home" aria-labelledby="hero-heading">
-      <div className="hero-pattern" aria-hidden="true" />
+      <div className="hero-doodle hero-doodle-one" aria-hidden="true">∿</div>
+      <div className="hero-doodle hero-doodle-two" aria-hidden="true">✦</div>
+
       <div className="hero-inner">
         <div className="hero-copy">
+          <p className="hero-eyebrow"><span /> Made in Uganda · Built for ages 3–12</p>
           <h1 className="hero-title" id="hero-heading">
-            Your Mother Tongue
-            <br />
-            is Your <span>Superpower</span>
+            Small steps.<br />
+            <span>Big roots.</span>
           </h1>
 
           <p className="hero-subtitle">
-            Baby Steps is a safe, joyful learning space for Ugandan children ages 3-12 to build
-            confidence in their mother tongue through stories, games, and everyday discovery.
+            A joyful learning app where Ugandan children grow confident in the language of home—
+            through stories, games, songs, and everyday discovery.
           </p>
 
-          <div className="app-store-button-stack left-aligned" aria-label="Download Baby Steps">
-            <a
-              href="#download"
-              className="app-store-link-block store-badge-ios"
-              aria-label="Go to waitlist for iOS"
-            >
-              <Image
-                src="/store/app-store-badge.svg"
-                alt="Download on the App Store"
-                className="app-store-button app-store-button-ios"
-                width={239}
-                height={80}
-                unoptimized
-              />
-            </a>
-
-            <a
-              href="#download"
-              className="google-play-link-block store-badge-google"
-              aria-label="Go to waitlist for Android"
-            >
-              <Image
-                src="/store/google-play-badge.png"
-                alt="Get it on Google Play"
-                className="app-store-button app-store-button-google"
-                width={564}
-                height={168}
-                unoptimized
-              />
+          <div className="cta-row">
+            <Link className="btn-primary" href="/waitlist">
+              Join the early explorers <span aria-hidden="true">→</span>
+            </Link>
+            <a className="hero-text-link" href="#inside-baby-steps">
+              See how children learn <span aria-hidden="true">↓</span>
             </a>
           </div>
 
-          <p className="hero-store-note">Coming soon on iOS and Android</p>
+          <div className="hero-trust-row" aria-label="Baby Steps benefits">
+            <span><b>7</b> Ugandan languages</span>
+            <span><b>10 min</b> playful sessions</span>
+            <span><b>0</b> ads for children</span>
+          </div>
         </div>
 
-        <div className="hero-visual" aria-hidden="true">
-          <div className="mascot-wrapper">
-            <div className="mascot-blob" />
-            <span className="hero-spark spark-1">⭐</span>
-            <span className="hero-spark spark-2">✨</span>
-            <span className="hero-spark spark-3">🌟</span>
-
+        <div className="hero-visual">
+          <div className="hero-stage">
+            <div className="hero-sun" aria-hidden="true" />
+            <div className="hero-speech" aria-label="Shana says Oli otya?">
+              <span>Shana says</span>
+              <strong>Oli otya?</strong>
+            </div>
             <Image
               className="hero-mascot-image"
-              src="/SVG/Mascot.svg"
-              alt=""
-              width={824}
-              height={1080}
+              src="/mascot/shana-wave.png"
+              alt="Shana, the Baby Steps mascot, waving and carrying a storybook"
+              width={1097}
+              height={1434}
+              priority
               unoptimized
             />
+            <div className="hero-mini-card hero-mini-card-left" aria-hidden="true">
+              <span className="mini-card-icon">Aa</span>
+              <p><strong>Words that feel</strong><br />like home</p>
+            </div>
+            <div className="hero-mini-card hero-mini-card-right" aria-hidden="true">
+              <span className="mini-card-check">✓</span>
+              <p><strong>Little win!</strong><br />3 words mastered</p>
+            </div>
+            <div className="hero-ground" aria-hidden="true">
+              <i /><i /><i /><i /><i />
+            </div>
           </div>
         </div>
       </div>

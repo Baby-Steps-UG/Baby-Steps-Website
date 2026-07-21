@@ -50,12 +50,18 @@ export function SiteHeader() {
           <ul className="nav-links">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link href={item.href}>{item.label}</Link>
+                <Link
+                  className={pathname === item.href ? "active" : ""}
+                  href={item.href}
+                  aria-current={pathname === item.href ? "page" : undefined}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
             <li>
               <Link className="nav-cta" href="/waitlist">
-                Join Waitlist -&gt;
+                Get early access <span aria-hidden="true">↗</span>
               </Link>
             </li>
           </ul>
@@ -85,14 +91,19 @@ export function SiteHeader() {
         <ul className="mobile-nav-links">
           {navItems.map((item) => (
             <li key={item.label}>
-              <Link href={item.href} onClick={() => setIsMenuOpen(false)}>
+              <Link
+                className={pathname === item.href ? "active" : ""}
+                href={item.href}
+                aria-current={pathname === item.href ? "page" : undefined}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {item.label}
               </Link>
             </li>
           ))}
           <li>
             <Link className="nav-cta mobile-nav-cta" href="/waitlist" onClick={() => setIsMenuOpen(false)}>
-              Join Waitlist -&gt;
+              Get early access <span aria-hidden="true">↗</span>
             </Link>
           </li>
         </ul>

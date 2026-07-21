@@ -1,156 +1,64 @@
+import Image from "next/image";
+
 const schoolBenefits = [
-  {
-    title: "Classroom-ready from day one",
-    detail:
-      "Teachers can start quickly with guided activities that match age groups and lesson flow without extra setup stress.",
-  },
-  {
-    title: "Learning that feels local",
-    detail:
-      "Children engage faster when examples, stories, and sounds reflect Ugandan culture and everyday life.",
-  },
-  {
-    title: "Confidence across ability levels",
-    detail:
-      "Mixed classrooms can move together with flexible pacing, so each learner grows while still feeling successful.",
-  },
+  { marker: "01", title: "Ready for the first lesson", detail: "Guided activities help teachers begin without a heavy setup or a new technical burden." },
+  { marker: "02", title: "Local from the first word", detail: "Children engage faster when examples, voices, and stories reflect the world they know." },
+  { marker: "03", title: "Flexible across a real classroom", detail: "Age-aware pacing makes room for mixed confidence and ability levels." },
 ];
 
 const rolloutSteps = [
-  {
-    title: "1. Planning with your school team",
-    detail:
-      "We agree on rollout goals, classes, and language priorities so implementation starts with clarity.",
-  },
-  {
-    title: "2. Teacher onboarding",
-    detail:
-      "Teachers receive practical training focused on daily use, not technical complexity.",
-  },
-  {
-    title: "3. Student launch",
-    detail:
-      "Learners begin with short, joyful sessions that build confidence before moving into deeper practice.",
-  },
-  {
-    title: "4. Ongoing support",
-    detail:
-      "Your school gets check-ins and guidance so the program remains consistent term after term.",
-  },
+  { title: "Plan", detail: "Agree on goals, classes, devices, and priority languages." },
+  { title: "Prepare", detail: "Give teachers practical, focused onboarding." },
+  { title: "Launch", detail: "Begin with short sessions that build confidence." },
+  { title: "Grow", detail: "Review progress and strengthen the termly rhythm." },
 ];
 
 const licensingOptions = [
-  {
-    title: "School Starter License",
-    scope: "Single campus rollout",
-    detail:
-      "A guided starting point for one school to launch confidently with a focused teaching team.",
-    includes: [
-      "Teacher onboarding sessions",
-      "Core classroom dashboard",
-      "Termly progress check-ins",
-    ],
-  },
-  {
-    title: "Multi-Class License",
-    scope: "Whole-school adoption",
-    detail:
-      "Designed for schools running across several classes with shared planning and easier coordination.",
-    includes: [
-      "Shared content planning",
-      "Multi-class learner insights",
-      "School lead support tools",
-    ],
-  },
-  {
-    title: "Network License",
-    scope: "District or school network",
-    detail:
-      "Best for networks that need aligned implementation across campuses with centralized support.",
-    includes: [
-      "Centralized rollout roadmap",
-      "Network-level reporting",
-      "Priority implementation support",
-    ],
-  },
+  { title: "Starter", scope: "One campus", detail: "A confident first rollout with a focused teaching team.", includes: ["Teacher onboarding", "Core classroom dashboard", "Termly check-ins"] },
+  { title: "Whole School", scope: "Multiple classes", detail: "Shared planning and clearer coordination across your school.", includes: ["Multi-class insights", "Shared content planning", "School lead support"] },
+  { title: "Network", scope: "Multiple campuses", detail: "Aligned implementation for a district or school network.", includes: ["Central rollout roadmap", "Network-level reporting", "Priority support"] },
 ];
 
 export function SchoolsPageContent() {
   return (
     <>
-      <section className="section themed-section">
+      <section className="section school-benefit-section">
         <div className="section-inner">
-          <div className="section-heading centered">
-            <span className="section-label">Why Schools Choose Baby Steps</span>
-            <h2 className="section-title centered">Serious learning with a joyful feel</h2>
-            <p className="section-subtitle centered">
-              Baby Steps helps schools strengthen language foundations while keeping children engaged
-              and proud of who they are.
-            </p>
-          </div>
-
-          <div className="info-card-grid three-up">
-            {schoolBenefits.map((benefit) => (
-              <article className="info-card" key={benefit.title}>
-                <h3 className="info-card-title">{benefit.title}</h3>
-                <p className="info-card-copy">{benefit.detail}</p>
-              </article>
-            ))}
+          <div className="section-heading centered compact-heading"><span className="section-label">Built for the classroom</span><h2 className="section-title">Serious learning. <span className="accent-orange">Joyful energy.</span></h2><p className="section-subtitle">A culturally familiar learning layer for the routines teachers already lead.</p></div>
+          <div className="school-benefit-grid">
+            {schoolBenefits.map((benefit) => <article key={benefit.title}><span>{benefit.marker}</span><h3>{benefit.title}</h3><p>{benefit.detail}</p></article>)}
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-inner">
-          <div className="section-heading centered">
-            <span className="section-label">Rollout Journey</span>
-            <h2 className="section-title centered">A simple path from planning to impact</h2>
-            <p className="section-subtitle centered">
-              We partner with your team from onboarding to consistent classroom use.
-            </p>
-          </div>
+      <section className="section classroom-section">
+        <div className="section-inner classroom-layout">
+          <div className="classroom-copy"><span className="section-label section-label-light">In the lesson</span><h2>One screen. Many brave answers.</h2><p>Use Baby Steps as a short warm-up, a guided group activity, or a focused learning station. The interface stays clear so the language can stay central.</p><a href="mailto:hello@babystepslearn.com?subject=Baby%20Steps%20for%20our%20school" className="btn-gold">Talk to our schools team →</a></div>
+          <div className="classroom-screen"><Image src="/app_screenshots/landscape_game_interface.png" alt="Baby Steps game interface for a classroom activity" width={2280} height={1012} unoptimized /><span>Teacher-friendly. Learner-ready.</span></div>
+        </div>
+      </section>
 
-          <div className="info-card-grid two-up">
-            {rolloutSteps.map((step) => (
-              <article className="info-card" key={step.title}>
-                <h3 className="info-card-title">{step.title}</h3>
-                <p className="info-card-copy">{step.detail}</p>
-              </article>
-            ))}
+      <section className="section rollout-section">
+        <div className="section-inner">
+          <div className="section-heading split-heading"><div><span className="section-label">A calm rollout</span><h2 className="section-title">From plan to classroom rhythm.</h2></div><p className="section-subtitle">We work alongside your team so launch day is only the beginning.</p></div>
+          <div className="rollout-track">
+            {rolloutSteps.map((step, index) => <article key={step.title}><span>{index + 1}</span><h3>{step.title}</h3><p>{step.detail}</p></article>)}
           </div>
         </div>
       </section>
 
       <section className="section school-licensing-section" id="school-licensing">
         <div className="section-inner">
-          <div className="section-heading centered">
-            <span className="section-label">School Licensing Options</span>
-            <h2 className="section-title centered">Flexible licensing models for school contexts</h2>
-            <p className="section-subtitle centered">
-              Choose the model that fits your rollout scope. We align the implementation and support
-              plan to your school or network needs.
-            </p>
-          </div>
-
+          <div className="section-heading centered compact-heading"><span className="section-label">School licensing</span><h2 className="section-title">Choose the scale. We’ll shape the support.</h2><p className="section-subtitle">Flexible models for a single campus, a whole school, or a growing network.</p></div>
           <div className="school-licensing-grid">
-            {licensingOptions.map((option) => (
-              <article className="school-licensing-card" key={option.title}>
-                <p className="school-licensing-scope">{option.scope}</p>
-                <h3 className="school-licensing-title">{option.title}</h3>
-                <p className="school-licensing-copy">{option.detail}</p>
-
-                <ul className="school-licensing-includes">
-                  {option.includes.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+            {licensingOptions.map((option, index) => (
+              <article className={index === 1 ? "featured" : ""} key={option.title}>
+                <p className="school-licensing-scope">{option.scope}</p><h3>{option.title}</h3><p>{option.detail}</p>
+                <ul>{option.includes.map((item) => <li key={item}>✓ {item}</li>)}</ul>
+                <a href="mailto:hello@babystepslearn.com?subject=Baby%20Steps%20school%20licensing">Let’s talk <span>→</span></a>
               </article>
             ))}
           </div>
-
-          <a className="btn-primary school-licensing-contact" href="#download">
-            Talk to the Schools Team
-          </a>
         </div>
       </section>
     </>

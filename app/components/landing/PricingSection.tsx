@@ -1,116 +1,32 @@
-const familyPlans = [
-  {
-    name: "Free",
-    price: "UGX 0",
-    period: "forever",
-    description: "A gentle start for one child learning at home.",
-    features: [
-      "1 child profile",
-      "Access to Free learning units",
-      "Parent-friendly weekly progress snapshots",
-    ],
-  },
-  {
-    name: "Basic",
-    price: "UGX 10,000",
-    period: "per month",
-    description: "Great for families that want more consistency and practice.",
-    features: [
-      "Up to 3 child profiles",
-      "Unlock Free + Basic learning units",
-      "Parent tips, nudges, and stronger progress tracking",
-    ],
-    featured: true,
-  },
-  {
-    name: "Premium",
-    price: "UGX 25,000",
-    period: "per month",
-    description: "Full access for families who want the complete learning journey.",
-    features: [
-      "Unlimited child profiles",
-      "Unlock all available learning units",
-      "Detailed progress insights and achievement tracking",
-    ],
-  },
-];
+import Link from "next/link";
 
-const schoolLicenses = [
-  {
-    tier: "Starter School License",
-    range: "Single campus rollout",
-    fit: "A strong first step for one school.",
-    details: "Term-based setup, teacher onboarding, and classroom-ready support.",
-  },
-  {
-    tier: "Growth School License",
-    range: "Multi-class expansion",
-    fit: "Best for schools scaling across more classes.",
-    details: "Shared content access, school reporting, and admin-friendly controls.",
-  },
-  {
-    tier: "District / Network License",
-    range: "District or network rollout",
-    fit: "Coordinated delivery across multiple schools.",
-    details: "Central planning, team training, and priority implementation support.",
-  },
+const familyPlans = [
+  { name: "Free", price: "UGX 0", period: "forever", description: "A gentle first step for one learner.", features: ["1 child profile", "Free learning units", "Weekly progress snapshot"] },
+  { name: "Basic", price: "UGX 10,000", period: "per month", description: "More practice for a growing family rhythm.", features: ["Up to 3 child profiles", "Free + Basic learning units", "Parent tips and progress tracking"], featured: true },
+  { name: "Premium", price: "UGX 25,000", period: "per month", description: "The complete journey, with deeper insight.", features: ["Unlimited child profiles", "All available learning units", "Achievements and detailed insights"] },
 ];
 
 export function PricingSection() {
   return (
     <section className="section pricing-section" id="pricing">
       <div className="section-inner">
-        <div className="section-heading centered">
-          <span className="section-label">Pricing</span>
-          <h2 className="section-title centered">Simple plans for families and schools</h2>
-          <p className="section-subtitle centered">
-            Choose a home plan for your family or a school license for full classroom rollout.
-          </p>
-        </div>
-
+        <div className="pricing-note"><span>Early explorer perk</span><p>Join the waitlist now and receive a 2-month Premium trial at launch.</p></div>
+        <div className="section-heading centered compact-heading"><span className="section-label">Family plans</span><h2 className="section-title">Start where you are.</h2><p className="section-subtitle">No complicated bundles. Choose the pace and access that fit your household.</p></div>
         <div className="pricing-grid">
           {familyPlans.map((plan) => (
             <article className={`plan-card ${plan.featured ? "featured" : ""}`} key={plan.name}>
-              {plan.featured ? <span className="plan-badge">Most Popular</span> : null}
-              <h3 className="plan-name">{plan.name}</h3>
-              <p className="plan-price">{plan.price}</p>
-              <p className="plan-period">{plan.period}</p>
-              <p className="plan-description">{plan.description}</p>
-              <ul className="plan-features">
-                {plan.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-              <a className="plan-cta" href="#download">
-                Choose {plan.name}
-              </a>
+              {plan.featured ? <span className="plan-badge">Family favourite</span> : <span className="plan-index">Baby Steps</span>}
+              <h3>{plan.name}</h3><p className="plan-description">{plan.description}</p>
+              <div className="plan-price"><strong>{plan.price}</strong><span>{plan.period}</span></div>
+              <ul>{plan.features.map((feature) => <li key={feature}>✓ {feature}</li>)}</ul>
+              <Link href="/waitlist">Choose {plan.name} <span>→</span></Link>
             </article>
           ))}
         </div>
 
-        <div className="school-license-panel" id="school-licensing">
-          <div className="school-license-head">
-            <h3 className="school-license-title">School Licensing</h3>
-            <p className="school-license-copy">
-              Running a school or network? We offer term-based licensing with guided onboarding,
-              teacher support, and flexible payment options for institutions.
-            </p>
-          </div>
-
-          <div className="school-license-grid">
-            {schoolLicenses.map((license) => (
-              <article className="school-license-card" key={license.tier}>
-                <h4>{license.tier}</h4>
-                <p className="school-license-range">{license.range}</p>
-                <p className="school-license-fit">{license.fit}</p>
-                <p className="school-license-details">{license.details}</p>
-              </article>
-            ))}
-          </div>
-
-          <a className="school-license-cta" href="#download">
-            Talk to the Schools Team
-          </a>
+        <div className="school-pricing-panel">
+          <div><span className="section-label section-label-light">For schools & networks</span><h3>Need more than a family plan?</h3><p>We shape term-based licensing around your classes, campuses, onboarding, and support needs.</p></div>
+          <a className="btn-gold" href="mailto:hello@babystepslearn.com?subject=Baby%20Steps%20school%20pricing">Build a school plan →</a>
         </div>
       </div>
     </section>

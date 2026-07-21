@@ -1,101 +1,37 @@
 const coreValues = [
-  {
-    title: "Rooted",
-    detail:
-      "We build from Ugandan language, sound, story, and daily life so children learn in a world that feels familiar.",
-  },
-  {
-    title: "Joyful",
-    detail:
-      "Learning is designed to feel like play. Every small step matters, and progress is celebrated with warmth.",
-  },
-  {
-    title: "Safe",
-    detail:
-      "Children, parents, and schools use Baby Steps in a trusted space focused on confidence and calm exploration.",
-  },
-  {
-    title: "Empowering",
-    detail:
-      "We treat every language as a strength. Children see their culture reflected back as something worth mastering.",
-  },
-  {
-    title: "Credible",
-    detail:
-      "Our approach is playful on the surface and thoughtful underneath, built to earn long-term trust from families and schools.",
-  },
-];
-
-const audienceFocus = [
-  {
-    title: "For children",
-    detail:
-      "A companion that encourages curiosity, speaking, listening, and early reading without fear of making mistakes.",
-  },
-  {
-    title: "For parents",
-    detail:
-      "A practical way to protect language identity at home while supporting school-readiness in a joyful rhythm.",
-  },
-  {
-    title: "For teachers",
-    detail:
-      "A classroom-friendly approach that supports foundational literacy and language confidence at scale.",
-  },
+  { marker: "R", title: "Rooted", detail: "Ugandan language, sound, story, and everyday life are the starting point—not decoration." },
+  { marker: "J", title: "Joyful", detail: "Learning should feel like play. We celebrate every honest attempt and every small win." },
+  { marker: "S", title: "Safe", detail: "Children explore calmly in a space designed for their age, attention, and wellbeing." },
+  { marker: "E", title: "Empowering", detail: "Every language is treated as a strength and every child’s identity as something worth seeing." },
+  { marker: "C", title: "Credible", detail: "Warm on the surface, thoughtful underneath, and built to earn long-term trust." },
 ];
 
 export function AboutPageContent() {
   return (
     <>
-      <section className="section story-section">
-        <div className="section-inner narrow-copy">
-          <span className="section-label">Our Story</span>
-          <h2 className="section-title">Every great journey starts with small steps</h2>
-          <p className="story-copy">
-            Baby Steps began with a simple truth: every Ugandan child is born into a world rich with
-            language, and that language deserves a place in learning. We believe a child&apos;s first
-            language is more than vocabulary. It is identity, confidence, and belonging.
-          </p>
-          <p className="story-copy">
-            That is why we design experiences that feel like home, from familiar stories and sounds
-            to playful moments children can proudly share with family and teachers.
-          </p>
+      <section className="section origin-section">
+        <div className="section-inner origin-layout">
+          <div><span className="section-label">Why we began</span><h2 className="section-title">A first language is never “just” a language.</h2></div>
+          <div className="origin-story"><p>It is the voice of a grandparent. The rhythm of a market. The joke that only lands at home. It is identity, confidence, and belonging.</p><p>Baby Steps began with a simple conviction: Ugandan children deserve learning experiences that reflect that richness back to them.</p></div>
         </div>
+        <div className="section-inner belief-banner"><span>We don’t import a foreign idea of childhood.</span><strong>We reflect the one that already exists here.</strong></div>
       </section>
 
-      <section className="section themed-section">
+      <section className="section values-section">
         <div className="section-inner">
-          <div className="section-heading centered">
-            <span className="section-label">What Guides Us</span>
-            <h2 className="section-title centered">Our values in action</h2>
-          </div>
-
-          <div className="info-card-grid three-up">
-            {coreValues.map((value) => (
-              <article className="info-card" key={value.title}>
-                <h3 className="info-card-title">{value.title}</h3>
-                <p className="info-card-copy">{value.detail}</p>
-              </article>
-            ))}
+          <div className="section-heading split-heading"><div><span className="section-label">What guides us</span><h2 className="section-title">Five values. One clear direction.</h2></div><p className="section-subtitle">Every screen, story, and partnership should feel recognisably Baby Steps.</p></div>
+          <div className="values-list">
+            {coreValues.map((value, index) => <article key={value.title}><span>{value.marker}</span><h3>{value.title}</h3><p>{value.detail}</p><small>0{index + 1}</small></article>)}
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-inner">
-          <div className="section-heading centered">
-            <span className="section-label">Who We Build For</span>
-            <h2 className="section-title centered">Children, families, and schools together</h2>
-          </div>
-
-          <div className="info-card-grid three-up">
-            {audienceFocus.map((item) => (
-              <article className="info-card" key={item.title}>
-                <h3 className="info-card-title">{item.title}</h3>
-                <p className="info-card-copy">{item.detail}</p>
-              </article>
-            ))}
-          </div>
+      <section className="section audience-section">
+        <div className="section-inner audience-grid">
+          <div className="audience-intro"><span className="section-label section-label-light">Built together</span><h2>Children at the centre. Grown-ups beside them.</h2></div>
+          <article><span>For children</span><h3>“I can do this.”</h3><p>A companion for curiosity, listening, speaking, and early reading without fear of mistakes.</p></article>
+          <article><span>For parents</span><h3>“I know what comes next.”</h3><p>A practical way to protect language identity while supporting a joyful learning rhythm.</p></article>
+          <article><span>For teachers</span><h3>“This fits my classroom.”</h3><p>A familiar, flexible tool for foundational literacy and language confidence at scale.</p></article>
         </div>
       </section>
     </>

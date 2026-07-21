@@ -1,123 +1,132 @@
 import Image from "next/image";
+import Link from "next/link";
 
-type Orientation = "portrait" | "landscape";
-
-interface AppScreenshot {
-  src: string;
-  title: string;
-  orientation: Orientation;
-  width: number;
-  height: number;
-  featured?: boolean;
-}
-
-function makeScreenshot(filename: string, title: string, featured = false): AppScreenshot {
-  const orientation: Orientation = filename.startsWith("portrait_") ? "portrait" : "landscape";
-
-  return {
-    src: `/app_screenshots/${filename}`,
-    title,
-    orientation,
-    width: orientation === "portrait" ? 1080 : 2280,
-    height: orientation === "portrait" ? 2326 : 1012,
-    featured,
-  };
-}
-
-const gameScreenshots = [
-  makeScreenshot("landscape_quiz_game_intro.png", "Quiz Game Intro", true),
-  makeScreenshot("landscape_quiz_game_opened.png", "Quiz Game In Progress"),
-  makeScreenshot("landscape_word_game_intro.png", "Word Game Intro"),
-  makeScreenshot("landscape_word_game_opened.png", "Word Game In Progress"),
-  makeScreenshot("landscape_story_opened.png", "Story View"),
-  makeScreenshot("landscape_counting_game_opened.png", "Counting Game"),
-  makeScreenshot("landscape_game_interface.png", "Main Game Interface"),
+const playMoments = [
+  {
+    src: "/app_screenshots/landscape_story_opened.png",
+    title: "Stories that sound familiar",
+    detail: "Listen, follow along, and discover words in context.",
+  },
+  {
+    src: "/app_screenshots/landscape_counting_game_opened.png",
+    title: "Numbers made playful",
+    detail: "Build early numeracy through bright, friendly challenges.",
+  },
+  {
+    src: "/app_screenshots/landscape_word_game_opened.png",
+    title: "Words worth remembering",
+    detail: "Match, repeat, and celebrate the little wins.",
+  },
 ];
 
-const parentScreenshots = [
-  makeScreenshot("portrait_parent_dashbooard.png", "Parent Dashboard"),
-  makeScreenshot("portrait_child_profiles.png", "Child Profiles"),
-  makeScreenshot("portrait_child_profile.png", "Child Profile"),
-  makeScreenshot("portrait_setting_english.png", "Settings: English"),
-  makeScreenshot("portrait_settings_luganda.png", "Settings: Luganda"),
+const parentScreens = [
+  {
+    src: "/app_screenshots/portrait_parent_dashbooard.png",
+    label: "A calm weekly overview",
+  },
+  {
+    src: "/app_screenshots/portrait_child_profiles.png",
+    label: "A path for every child",
+  },
+  {
+    src: "/app_screenshots/portrait_child_profile.png",
+    label: "Progress without pressure",
+  },
 ];
-
-const featuredGameScreenshot = gameScreenshots.find((shot) => shot.featured) ?? gameScreenshots[0];
-const gameGalleryScreenshots = gameScreenshots.filter((shot) => shot.src !== featuredGameScreenshot.src);
 
 export function FeaturesSection() {
   return (
-    <section className="section inside-app-section" id="features">
+    <section className="section inside-app-section" id="inside-baby-steps">
       <div className="section-inner inside-app-inner">
-        <div className="section-heading centered inside-app-typestack">
-          <span className="section-label">Inside Baby Steps</span>
-          <h2 className="section-title centered">Play-first learning for ages 3-12</h2>
-          <p className="section-subtitle centered">
-            Children can jump into quizzes, word games, stories, and counting adventures designed
-            to feel playful at every stage.
-          </p>
-        </div>
-
-        <div className="inside-app-games" aria-label="Game screens inside Baby Steps">
-          <figure className={`inside-app-featured ${featuredGameScreenshot.orientation}`}>
-            <div className={`inside-app-shot-media ${featuredGameScreenshot.orientation}`}>
-              <Image
-                src={featuredGameScreenshot.src}
-                alt={`Baby Steps game screenshot: ${featuredGameScreenshot.title}`}
-                className="inside-app-shot-image"
-                width={featuredGameScreenshot.width}
-                height={featuredGameScreenshot.height}
-                unoptimized
-              />
-            </div>
-            <figcaption className="inside-app-shot-caption">{featuredGameScreenshot.title}</figcaption>
-          </figure>
-
-          <div className="inside-app-gallery inside-app-gallery-games" aria-label="App game gallery">
-            {gameGalleryScreenshots.map((shot) => (
-              <figure className={`inside-app-shot-card ${shot.orientation}`} key={shot.src}>
-                <div className={`inside-app-shot-media ${shot.orientation}`}>
-                  <Image
-                    src={shot.src}
-                    alt={`Baby Steps game screenshot: ${shot.title}`}
-                    className="inside-app-shot-image"
-                    width={shot.width}
-                    height={shot.height}
-                    unoptimized
-                  />
-                </div>
-                <figcaption className="inside-app-shot-caption">{shot.title}</figcaption>
-              </figure>
-            ))}
+        <div className="section-heading split-heading inside-app-heading">
+          <div>
+            <span className="section-label section-label-light">Inside Baby Steps</span>
+            <h2 className="section-title">
+              Learning that looks like <span>play.</span>
+            </h2>
           </div>
-        </div>
-
-        <div className="inside-app-parents-block">
-          <div className="inside-app-parents-copy">
-            <h3 className="inside-app-parents-title">Parent View</h3>
-            <p className="inside-app-parents-subtitle">
-              Portrait screens make it easy for parents to manage profiles, adjust settings, and
-              guide each child.
+          <div className="inside-app-intro">
+            <p>
+              Every tap has a purpose. Children explore at their own pace while Shana keeps the
+              experience warm, encouraging, and easy to understand.
             </p>
+            <span className="real-screen-note"><i /> Real screens from the Baby Steps app</span>
+          </div>
+        </div>
+
+        <div className="app-feature-stage">
+          <div className="app-feature-copy">
+            <span className="feature-count">01 / PLAY</span>
+            <h3>A small world of big discoveries</h3>
+            <p>
+              Quizzes, stories, word games, and number adventures turn daily practice into a place
+              children want to return to.
+            </p>
+            <ul>
+              <li>Clear, child-friendly navigation</li>
+              <li>Short activities with joyful feedback</li>
+              <li>Familiar language and local context</li>
+            </ul>
           </div>
 
-          <div
-            className="inside-app-gallery inside-app-gallery-parents"
-            aria-label="Parents portrait screens"
-          >
-            {parentScreenshots.map((shot) => (
-              <figure className={`inside-app-shot-card ${shot.orientation}`} key={shot.src}>
-                <div className={`inside-app-shot-media ${shot.orientation}`}>
-                  <Image
-                    src={shot.src}
-                    alt={`Baby Steps parent screenshot: ${shot.title}`}
-                    className="inside-app-shot-image"
-                    width={shot.width}
-                    height={shot.height}
-                    unoptimized
-                  />
-                </div>
-                <figcaption className="inside-app-shot-caption">{shot.title}</figcaption>
+          <figure className="app-feature-screen">
+            <div className="screen-topbar" aria-hidden="true"><i /><i /><i /><span>Baby Steps</span></div>
+            <Image
+              src="/app_screenshots/landscape_quiz_game_intro.png"
+              alt="A quiz game introduction screen inside Baby Steps"
+              width={2280}
+              height={1012}
+              unoptimized
+            />
+            <figcaption>Ready for a quick challenge?</figcaption>
+          </figure>
+        </div>
+
+        <div className="play-moment-grid">
+          {playMoments.map((moment, index) => (
+            <figure className="play-moment-card" key={moment.title}>
+              <div className="play-moment-image">
+                <Image
+                  src={moment.src}
+                  alt={`Baby Steps app screen: ${moment.title}`}
+                  width={2280}
+                  height={1012}
+                  unoptimized
+                />
+              </div>
+              <figcaption>
+                <span>0{index + 2}</span>
+                <div><strong>{moment.title}</strong><p>{moment.detail}</p></div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="parent-view-panel">
+          <div className="parent-view-copy">
+            <span className="section-label">For grown-ups</span>
+            <h3>Progress, without the guesswork.</h3>
+            <p>
+              A focused parent space makes profiles, activity, and next steps easy to understand—
+              so encouragement can stay simple and specific.
+            </p>
+            <Link href="/for-parents" className="inline-link">
+              Explore the parent experience <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="parent-phone-row" aria-label="Baby Steps parent screens">
+            {parentScreens.map((screen) => (
+              <figure className="parent-phone" key={screen.src}>
+                <div className="parent-phone-speaker" aria-hidden="true" />
+                <Image
+                  src={screen.src}
+                  alt={`Baby Steps parent screen: ${screen.label}`}
+                  width={1080}
+                  height={2326}
+                  unoptimized
+                />
+                <figcaption>{screen.label}</figcaption>
               </figure>
             ))}
           </div>

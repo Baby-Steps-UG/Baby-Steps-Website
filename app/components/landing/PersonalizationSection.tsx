@@ -1,24 +1,23 @@
+import Link from "next/link";
+
 export function PersonalizationSection() {
   return (
     <section className="section cta-section" id="download">
-      <div className="section-inner">
-        <span className="section-label">Coming Soon</span>
-        <h2 className="section-title centered">Be first to access Baby Steps</h2>
-        <p className="section-subtitle centered cta-subtitle">
-          We&apos;re in the final stretch. Join the waitlist to receive launch updates, plan details,
-          and early onboarding for families and schools supporting learners ages 3-12.
-          <span className="waitlist-trial-note">
-            (Waitlist members get a 2-month Premium trial at launch.)
-          </span>
-        </p>
-
-        <div className="waitlist-inline-wrap" id="schools">
-          <iframe
-            className="waitlist-embed"
-            src="https://tally.so/embed/xXNZOy?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
-            title="Baby Steps waitlist"
-            loading="lazy"
-          />
+      <div className="section-inner cta-card">
+        <div className="cta-doodle" aria-hidden="true">∿</div>
+        <div className="cta-copy">
+          <span className="section-label section-label-light">Coming soon</span>
+          <h2>Ready for their next little step?</h2>
+          <p>
+            Join families and schools waiting to bring joyful mother-tongue learning into every day.
+            Early explorers receive a 2-month Premium trial at launch.
+          </p>
+          <Link className="btn-gold" href="/waitlist">
+            Save my early spot <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="cta-word-stack" aria-hidden="true">
+          <span>one word</span><span>one game</span><strong>one brave step.</strong>
         </div>
       </div>
     </section>

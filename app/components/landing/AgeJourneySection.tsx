@@ -1,94 +1,71 @@
-import Image from "next/image";
-
 const valueProps = [
   {
-    title: "Built for ages 3-12",
+    marker: "01",
+    eyebrow: "Meet them where they are",
+    title: "Made for every little learner",
     description:
-      "Children build strong literacy, language, and numeracy foundations through playful activities designed for Ugandan learners from age 3 to 12.",
-    image: "/values/built_for_learners.png",
-    alt: "Built for ages 3-12 value illustration.",
+      "Children build language, literacy, and numeracy foundations through playful activities designed for Ugandan learners from age 3 to 12.",
+    note: "Age-aware paths · Gentle pacing",
+    tone: "blue",
   },
   {
-    title: "Joyful and engaging",
+    marker: "02",
+    eyebrow: "Play is serious learning",
+    title: "Joy first. Progress follows.",
     description:
       "Guided by friendly characters, children explore stories, songs, and mini-games that make learning feel exciting and familiar.",
-    image: "/values/joyful.png",
-    alt: "Joyful and engaging value illustration.",
+    note: "Stories · Songs · Games",
+    tone: "orange",
   },
   {
-    title: "Flexible for every family",
+    marker: "03",
+    eyebrow: "One family, many rhythms",
+    title: "Fits into real family life",
     description:
-      "Choose the plan that fits your household. Start simple, then unlock more language paths and advanced progress insights as your child grows.",
-    image: "/values/flexible_plans.png",
-    alt: "Flexible plans for every family value illustration.",
-  },
-  {
-    title: "Developed with educators",
-    description:
-      "Our curriculum is co-designed with teachers and early-years specialists to balance academic growth, confidence, and playful exploration.",
-    image: "/1x/Pattern%2003.png",
-    alt: "Baby Steps educational themed visual pattern.",
-  },
-  {
-    title: "Classroom-ready features",
-    description:
-      "Assign lessons, track learner progress, and support different levels in one class with tools made for real Ugandan school environments.",
-    image: "/1x/Pattern%2004.png",
-    alt: "Baby Steps school-focused patterned visual.",
+      "Start with a few minutes at home, build a classroom rhythm, and see clear progress as confidence grows one word at a time.",
+    note: "At home · At school · On the go",
+    tone: "gold",
   },
 ];
 
-const highlightedValueProps = valueProps.slice(0, 3);
-const supportingValueProps = valueProps.slice(3);
-
 export function AgeJourneySection() {
   return (
-    <section className="section value-prop-section" id="about">
+    <section className="section value-prop-section" id="why-baby-steps">
       <div className="section-inner">
-        <div className="section-heading centered value-prop-intro">
-          <span className="section-label">Our Values</span>
-          <h2 className="section-title centered">
-            A learning app that <span className="accent-blue">grows from age 3 to 12</span>
-          </h2>
-          <p className="section-subtitle centered">
-            Baby Steps supports the whole child with age-appropriate experiences that blend
-            academic skill-building, social-emotional growth, and creative play.
+        <div className="section-heading split-heading value-prop-intro">
+          <div>
+            <span className="section-label">Why Baby Steps</span>
+            <h2 className="section-title">
+              Built for the whole <span className="accent-orange">learning journey.</span>
+            </h2>
+          </div>
+          <p className="section-subtitle">
+            Warm enough for a first word. Rich enough for a growing reader. Always rooted in
+            Ugandan culture.
           </p>
         </div>
 
-        <div className="value-prop-content" id="values">
-          <div className="value-prop-grid">
-            {highlightedValueProps.map((value, index) => (
-              <div
-                className={`value-prop-row ${index % 2 === 1 ? "is-reversed" : ""}`}
-                key={value.title}
-              >
-                <article className="value-prop-typestack">
-                  <h3 className="value-prop-title">{value.title}</h3>
-                  <p className="value-prop-description">{value.description}</p>
-                </article>
-
-                <div className="value-prop-image-block">
-                  <Image
-                    className="value-prop-image"
-                    src={value.image}
-                    alt={value.alt}
-                    width={1024}
-                    height={1024}
-                    unoptimized
-                  />
-                </div>
+        <div className="value-card-grid">
+          {valueProps.map((value) => (
+            <article className={`value-card value-card-${value.tone}`} key={value.title}>
+              <div className="value-card-topline">
+                <span className="value-card-marker">{value.marker}</span>
+                <span className="value-card-doodle" aria-hidden="true">✦</span>
               </div>
-            ))}
-          </div>
+              <p className="value-card-eyebrow">{value.eyebrow}</p>
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
+              <span className="value-card-note">{value.note}</span>
+            </article>
+          ))}
+        </div>
 
-          <div className="value-prop-extra-grid" aria-label="Additional Baby Steps values">
-            {supportingValueProps.map((value) => (
-              <article className="value-prop-typestack" key={value.title}>
-                <h3 className="value-prop-title">{value.title}</h3>
-                <p className="value-prop-description">{value.description}</p>
-              </article>
-            ))}
+        <div className="credibility-strip">
+          <p><strong>Playful on the surface.</strong> Thoughtful underneath.</p>
+          <div>
+            <span>Educator-informed</span>
+            <span>Child-safe by design</span>
+            <span>Classroom-ready</span>
           </div>
         </div>
       </div>

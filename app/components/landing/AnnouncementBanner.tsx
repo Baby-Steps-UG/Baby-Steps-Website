@@ -47,7 +47,8 @@ export function AnnouncementBanner() {
     >
       <div className="announcement-inner">
         <p className="announcement-copy">
-          Waitlist perk: join now and receive a <span>2-month Premium trial</span> at launch.
+          <span className="announcement-kicker">For early explorers</span>
+          Join the waitlist and receive a <strong>2-month Premium trial</strong> at launch.
         </p>
         <button
           type="button"
@@ -55,7 +56,7 @@ export function AnnouncementBanner() {
           onClick={() => setIsVisible(false)}
           aria-label="Dismiss waitlist offer"
         >
-          x
+          ×
         </button>
       </div>
     </section>

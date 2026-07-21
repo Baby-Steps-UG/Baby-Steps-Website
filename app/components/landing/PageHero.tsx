@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 type PageHeroVariant = "parents" | "schools" | "languages" | "about" | "pricing";
 
 interface PageHeroProps {
@@ -10,30 +13,37 @@ interface PageHeroProps {
 
 const visualCopyByVariant: Record<
   PageHeroVariant,
-  {
-    ribbon: string;
-    cards: [string, string, string];
-  }
+  { note: string; stat: string; statLabel: string; cardTitle: string }
 > = {
   parents: {
-    ribbon: "Family Rhythm",
-    cards: ["Daily 10-min routines", "At-home parent prompts", "Progress you can read fast"],
+    note: "Made for real family rhythms",
+    stat: "10 min",
+    statLabel: "is enough for a meaningful little step",
+    cardTitle: "This week’s gentle focus",
   },
   schools: {
-    ribbon: "Classroom Ready",
-    cards: ["Term setup in minutes", "Teacher guided playlists", "Group progress snapshots"],
+    note: "A joyful layer for the classroom",
+    stat: "1 path",
+    statLabel: "with room for every learner’s pace",
+    cardTitle: "Today’s class moment",
   },
   languages: {
-    ribbon: "Language Paths",
-    cards: ["Audio-first vocabulary", "Story and game loops", "Built for Ugandan contexts"],
+    note: "Language is identity in action",
+    stat: "7 paths",
+    statLabel: "and a growing home for more",
+    cardTitle: "Listen. Say it. Own it.",
   },
   about: {
-    ribbon: "Made In Uganda",
-    cards: ["Culturally rooted design", "Joyful early learning", "Built with families and schools"],
+    note: "Made in Uganda, with purpose",
+    stat: "1 belief",
+    statLabel: "every child’s first language matters",
+    cardTitle: "Rooted · Joyful · Safe",
   },
   pricing: {
-    ribbon: "Simple Plans",
-    cards: ["Family tiers", "School licenses", "Supportive onboarding"],
+    note: "Start small and grow naturally",
+    stat: "3 plans",
+    statLabel: "for different family rhythms",
+    cardTitle: "Simple. Clear. Supportive.",
   },
 };
 
@@ -41,45 +51,39 @@ export function PageHero({ variant, label, title, subtitle, highlights }: PageHe
   const visual = visualCopyByVariant[variant];
 
   return (
-    <section className={`hero page-hero page-hero-${variant}`} aria-labelledby="page-hero-heading">
-      <div className="hero-pattern" aria-hidden="true" />
-      <div className="hero-inner">
-        <div className="hero-copy">
-          <span className="section-label page-hero-label">{label}</span>
-          <h1 className="hero-title" id="page-hero-heading">
-            {title}
-          </h1>
-
-          <p className="hero-subtitle">{subtitle}</p>
+    <section className={`page-hero page-hero-${variant}`} aria-labelledby="page-hero-heading">
+      <div className="page-hero-inner">
+        <div className="page-hero-copy">
+          <div className="page-breadcrumb"><Link href="/">Home</Link><span>/</span>{label}</div>
+          <span className="section-label">{label}</span>
+          <h1 className="page-hero-title" id="page-hero-heading">{title}</h1>
+          <p className="page-hero-subtitle">{subtitle}</p>
 
           <div className="hero-highlights" aria-label={`${label} highlights`}>
-            {highlights.map((item) => (
-              <span className="hero-highlight-pill" key={item}>
-                {item}
-              </span>
-            ))}
+            {highlights.map((item) => <span key={item}>✓ {item}</span>)}
           </div>
 
-          <a className="btn-primary page-hero-cta" href="#download">
-            Join Waitlist
-          </a>
+          <Link className="btn-primary" href="/waitlist">
+            Join the early explorers <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
-        <div className="hero-visual page-hero-visual" aria-hidden="true">
-          <div className="page-hero-art">
-            <div className="page-hero-orbit page-hero-orbit-a" />
-            <div className="page-hero-orbit page-hero-orbit-b" />
-            <div className="page-hero-orbit page-hero-orbit-c" />
-
-            <span className="page-hero-ribbon">{visual.ribbon}</span>
-
-            <div className="page-hero-panel-grid">
-              {visual.cards.map((card) => (
-                <span className="page-hero-panel" key={card}>
-                  {card}
-                </span>
-              ))}
-            </div>
+        <div className="page-hero-visual">
+          <div className="page-hero-color-card">
+            <p>{visual.note}</p>
+            <div className="page-hero-stat"><strong>{visual.stat}</strong><span>{visual.statLabel}</span></div>
+            <Image
+              src="/mascot/shana-wave.png"
+              alt="Shana, the Baby Steps learning companion"
+              className="page-hero-shana"
+              width={1097}
+              height={1434}
+              unoptimized
+            />
+          </div>
+          <div className="page-hero-float-card">
+            <span aria-hidden="true">✦</span>
+            <p>{visual.cardTitle}</p>
           </div>
         </div>
       </div>
