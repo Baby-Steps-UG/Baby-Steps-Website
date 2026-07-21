@@ -3,33 +3,42 @@ import Link from "next/link";
 
 const playMoments = [
   {
-    src: "/app_screenshots/landscape_story_opened.png",
-    title: "Stories that sound familiar",
-    detail: "Listen, follow along, and discover words in context.",
+    src: "/app_screenshots/portrait_stories.png",
+    title: "A Luganda story to follow",
+    detail: "Listen, read, and meet familiar words in a simple story flow.",
   },
   {
-    src: "/app_screenshots/landscape_counting_game_opened.png",
-    title: "Numbers made playful",
-    detail: "Build early numeracy through bright, friendly challenges.",
+    src: "/app_screenshots/landscape_word_game.png",
+    title: "Build the word",
+    detail: "Turn a familiar phrase into a hands-on spelling challenge.",
   },
   {
-    src: "/app_screenshots/landscape_word_game_opened.png",
-    title: "Words worth remembering",
-    detail: "Match, repeat, and celebrate the little wins.",
+    src: "/app_screenshots/landscape_quiz_game.png",
+    title: "See it. Hear it. Recall it.",
+    detail: "Move between Luganda and English with audio support and gentle pacing.",
+  },
+  {
+    src: "/app_screenshots/landscape_coloring_studio.png",
+    title: "Create with the new word",
+    detail: "Bring ‘Oli otya?’ into a playful colouring activity children can save and share.",
   },
 ];
 
 const parentScreens = [
   {
-    src: "/app_screenshots/portrait_parent_dashbooard.png",
+    src: "/app_screenshots/portrait_parent_dashboard.png",
     label: "A calm weekly overview",
   },
   {
     src: "/app_screenshots/portrait_child_profiles.png",
-    label: "A path for every child",
+    label: "Profiles for every child",
   },
   {
-    src: "/app_screenshots/portrait_child_profile.png",
+    src: "/app_screenshots/portrait_child_activities.png",
+    label: "All activity in one place",
+  },
+  {
+    src: "/app_screenshots/portrait_individual_child_profile.png",
     label: "Progress without pressure",
   },
 ];
@@ -59,8 +68,8 @@ export function FeaturesSection() {
             <span className="feature-count">01 / PLAY</span>
             <h3>A small world of big discoveries</h3>
             <p>
-              Quizzes, stories, word games, and number adventures turn daily practice into a place
-              children want to return to.
+              The Luganda learning hub brings stories, word games, quizzes, and creative activities
+              into one clear place children can navigate with confidence.
             </p>
             <ul>
               <li>Clear, child-friendly navigation</li>
@@ -72,13 +81,13 @@ export function FeaturesSection() {
           <figure className="app-feature-screen">
             <div className="screen-topbar" aria-hidden="true"><i /><i /><i /><span>Baby Steps</span></div>
             <Image
-              src="/app_screenshots/landscape_quiz_game_intro.png"
-              alt="A quiz game introduction screen inside Baby Steps"
-              width={2280}
-              height={1012}
+              src="/app_screenshots/landscape_learning_hub.png"
+              alt="The Baby Steps Luganda learning hub with greeting and family learning paths"
+              width={2400}
+              height={1080}
               unoptimized
             />
-            <figcaption>Ready for a quick challenge?</figcaption>
+            <figcaption>One clear home for the Luganda learning journey</figcaption>
           </figure>
         </div>
 
@@ -89,8 +98,8 @@ export function FeaturesSection() {
                 <Image
                   src={moment.src}
                   alt={`Baby Steps app screen: ${moment.title}`}
-                  width={2280}
-                  height={1012}
+                  width={2400}
+                  height={1080}
                   unoptimized
                 />
               </div>
@@ -100,6 +109,27 @@ export function FeaturesSection() {
               </figcaption>
             </figure>
           ))}
+        </div>
+
+        <div className="parent-gate-feature">
+          <div className="parent-gate-copy">
+            <span className="feature-count">06 / SAFE BY DESIGN</span>
+            <h3>Child mode stays for children.</h3>
+            <p>
+              A quick grown-up puzzle creates a thoughtful pause before leaving the child
+              experience—keeping settings and family controls in the right hands.
+            </p>
+          </div>
+          <figure>
+            <Image
+              src="/app_screenshots/landscape_parent_gate.png"
+              alt="Baby Steps parent gate asking a simple grown-up maths question"
+              width={2400}
+              height={1080}
+              unoptimized
+            />
+            <figcaption>Parent access is intentionally separate from child mode.</figcaption>
+          </figure>
         </div>
 
         <div className="parent-view-panel">
@@ -123,7 +153,7 @@ export function FeaturesSection() {
                   src={screen.src}
                   alt={`Baby Steps parent screen: ${screen.label}`}
                   width={1080}
-                  height={2326}
+                  height={2400}
                   unoptimized
                 />
                 <figcaption>{screen.label}</figcaption>

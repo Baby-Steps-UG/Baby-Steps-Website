@@ -38,7 +38,7 @@ export function ParentsPageContent() {
         <div className="section-inner parent-dashboard-layout">
           <div className="parent-dashboard-art">
             <div className="dashboard-phone">
-              <Image src="/app_screenshots/portrait_parent_dashbooard.png" alt="Baby Steps parent dashboard" width={1080} height={2326} unoptimized />
+              <Image src="/app_screenshots/portrait_parent_dashboard.png" alt="Baby Steps parent dashboard" width={1080} height={2400} unoptimized />
             </div>
             <div className="dashboard-note"><strong>3 little wins</strong><span>to celebrate this week</span></div>
           </div>

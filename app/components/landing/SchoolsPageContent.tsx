@@ -70,10 +70,10 @@ export function SchoolsPageContent() {
           <div className="school-preview-screen">
             <span className="school-preview-stamp">Product direction · Not the final school experience</span>
             <Image
-              src="/app_screenshots/landscape_game_interface.png"
+              src="/app_screenshots/landscape_learning_hub.png"
               alt="A Baby Steps Luganda learning activity showing the visual direction for a future classroom experience"
-              width={2280}
-              height={1012}
+              width={2400}
+              height={1080}
               unoptimized
             />
           </div>
