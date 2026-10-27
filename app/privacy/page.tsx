@@ -13,8 +13,6 @@ export default function PrivacyPage() {
     <PageShell showPersonalization={false}>
       <LegalDocument
         source="privacy_policy.md"
-        eyebrow="Privacy, in plain language"
-        summary="We designed Baby Steps for young learners and the grown-ups who care for them. This policy explains what information is used, why, and the choices families have."
       />
     </PageShell>
   );

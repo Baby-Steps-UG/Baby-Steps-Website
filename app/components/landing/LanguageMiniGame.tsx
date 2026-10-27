@@ -1,130 +1,74 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { languageQuizzes, type QuizLanguage } from "./languageData";
+import { parseQuizProgress, readPreference, savePreference, type QuizProgress } from "../../lib/site-preferences";
+import { useCookiePreferences } from "./CookiePreferences";
 
-interface LanguageMiniGameProps {
-  language: QuizLanguage;
-}
+const initialProgress: QuizProgress = { version: 1, questionIndex: 0, score: 0, selected: null };
 
-export function LanguageMiniGame({ language }: LanguageMiniGameProps) {
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
-  const [selected, setSelected] = useState<string | null>(null);
-
+export function LanguageMiniGame({ language }: { language: QuizLanguage }) {
+  const [progress, setProgress] = useState<QuizProgress>(initialProgress);
+  const { ready } = useCookiePreferences();
+  const restoredLanguage = useRef<string | null>(null);
+  const promptRef = useRef<HTMLHeadingElement>(null);
   const questions = languageQuizzes[language];
-  const isComplete = questionIndex >= questions.length;
-  const currentQuestion = isComplete ? null : questions[questionIndex];
+  const { questionIndex, score, selected } = progress;
+  const isComplete = questionIndex === questions.length;
+  const currentQuestion = questions[questionIndex];
 
   useEffect(() => {
-    setQuestionIndex(0);
-    setScore(0);
-    setSelected(null);
-  }, [language]);
+    if (!ready || restoredLanguage.current === language) return;
+    setProgress(parseQuizProgress(readPreference("quiz"), questions) ?? initialProgress);
+    restoredLanguage.current = language;
+  }, [ready, language, questions]);
 
-  const feedback = (() => {
-    if (selected === null || currentQuestion === null) {
-      return "";
-    }
-
-    return selected === currentQuestion.answer
-      ? "Great job. That is correct."
-      : `Good try. The correct answer is ${currentQuestion.answer}.`;
-  })();
+  const update = (next: QuizProgress, moveFocus = false) => {
+    setProgress(next);
+    savePreference("quiz", JSON.stringify(next));
+    if (moveFocus) requestAnimationFrame(() => promptRef.current?.focus());
+  };
 
   const handleSelect = (option: string) => {
-    if (selected !== null || currentQuestion === null) {
-      return;
-    }
-
-    setSelected(option);
-
-    if (option === currentQuestion.answer) {
-      setScore((previous) => previous + 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentQuestion === null) {
-      return;
-    }
-
-    if (questionIndex === questions.length - 1) {
-      setQuestionIndex(questions.length);
-      return;
-    }
-
-    setQuestionIndex((previous) => previous + 1);
-    setSelected(null);
-  };
-
-  const handleRestart = () => {
-    setQuestionIndex(0);
-    setScore(0);
-    setSelected(null);
+    if (selected !== null || !currentQuestion) return;
+    update({ ...progress, selected: option, score: score + (option === currentQuestion.answer ? 1 : 0) });
   };
 
   return (
-    <section className="section language-game-section">
+    <section className="section language-game-section" id="luganda-quiz" aria-labelledby="quiz-heading">
       <div className="section-inner">
-        <div className="section-heading centered">
-          <span className="section-label">Mini Game</span>
-          <h2 className="section-title centered">Take a tiny Luganda step</h2>
-          <p className="section-subtitle centered">
-            Three quick questions. No pressure—just a playful taste of the journey.
-          </p>
-        </div>
-
-        <div className="language-game-card" role="group" aria-label={`${language} mini game`}>
-          <p className="language-game-current">Now playing: {language}</p>
-
+        <div className="section-heading centered"><h2 className="section-title" id="quiz-heading">Try the Luganda quiz</h2></div>
+        <div className="language-game-card" role="group" aria-label={`${language} quiz`}>
           {isComplete ? (
             <div className="language-game-complete">
-              <p className="language-game-score">
-                You got {score} out of {questions.length} correct in {language}.
-              </p>
-              <button className="language-game-button" type="button" onClick={handleRestart}>
-                Play Again
-              </button>
+              <h3 className="language-game-score" ref={promptRef} tabIndex={-1}>{score} of {questions.length} correct</h3>
+              <button className="language-game-button" type="button" onClick={() => update(initialProgress, true)}>Play again</button>
             </div>
           ) : (
             <>
-              <p className="language-game-progress">
-                Question {questionIndex + 1} of {questions.length}
-              </p>
-              <p className="language-game-prompt">{currentQuestion?.prompt}</p>
-
+              <p className="language-game-progress">Question {questionIndex + 1} of {questions.length}</p>
+              <h3 className="language-game-prompt" ref={promptRef} tabIndex={-1}>{currentQuestion.prompt}</h3>
               <div className="language-game-options">
-                {currentQuestion?.options.map((option) => {
-                  const isChosen = selected === option;
-                  const isCorrect = option === currentQuestion?.answer;
-
-                  return (
-                    <button
-                      key={option}
-                      className={`language-game-option ${isChosen ? "selected" : ""} ${
-                        selected !== null && isCorrect ? "correct" : ""
-                      }`.trim()}
-                      type="button"
-                      onClick={() => handleSelect(option)}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
+                {currentQuestion.options.map((option) => (
+                  <button
+                    key={option}
+                    className={`language-game-option ${selected === option ? "selected" : ""} ${selected !== null && option === currentQuestion.answer ? "correct" : ""}`.trim()}
+                    type="button"
+                    aria-pressed={selected === option}
+                    disabled={!ready || selected !== null}
+                    onClick={() => handleSelect(option)}
+                  >{option}</button>
+                ))}
               </div>
-
-              {selected !== null ? <p className="language-game-feedback">{feedback}</p> : null}
-
+              <p className="language-game-feedback" role="status">
+                {selected === null ? "" : selected === currentQuestion.answer ? "Correct!" : `The answer is ${currentQuestion.answer}.`}
+              </p>
               <button
                 className="language-game-button"
                 type="button"
-                onClick={handleNext}
+                onClick={() => update({ ...progress, questionIndex: questionIndex + 1, selected: null }, true)}
                 disabled={selected === null}
-              >
-                {questionIndex === questions.length - 1 ? "Finish" : "Next"}
-              </button>
+              >{questionIndex === questions.length - 1 ? "Finish" : "Next"}</button>
             </>
           )}
         </div>

@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { AboutPageContent } from "../components/landing/AboutPageContent";
 import { PageShell } from "../components/landing/PageShell";
 import { PageHero } from "../components/landing/PageHero";
+
+export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
@@ -8,13 +11,8 @@ export default function AboutPage() {
       <PageHero
         variant="about"
         label="About"
-        title="Built in Uganda, for Ugandan learners"
-        subtitle="Baby Steps exists to help children grow in language, identity, and confidence through learning that feels like home."
-        highlights={[
-          "Rooted in local culture",
-          "Warm, joyful learning experiences",
-          "Built for families, listening to schools",
-        ]}
+        title="Made in Uganda"
+        highlights={["Luganda at launch", "For ages 3–12"]}
       />
       <AboutPageContent />
     </PageShell>

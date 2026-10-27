@@ -1,8 +1,22 @@
 # Privacy Policy for Baby Steps
 
-**Last updated:** July 21, 2026
+**Last updated:** October 27, 2026
 
 Baby Steps ("we," "our," or "us") is an educational app for young children and their parents/guardians. This Privacy Policy explains what the app collects or processes, how it is used, and the choices users have.
+
+## Website Cookies
+
+The Baby Steps website uses a cookie to remember your cookie choice for 180 days. Optional cookies are off until you choose to allow them.
+
+- **Cookie choice** (`bs_cookie_consent`): remembers whether optional cookies are allowed or declined, for 180 days.
+- **Dismissed offer** (`bs_offer_dismissed`): with permission, keeps the waitlist offer dismissed for up to 180 days.
+- **Luganda quiz** (`bs_luganda_quiz`): with permission, remembers the current question, selected answer, and score for up to 30 days.
+
+Optional cookies are stored on this browser. They do not contain a name, email address, or advertising identifier. The website does not add advertising or analytics cookies. Browser storage settings can prevent cookies from being saved.
+
+Use **Cookie settings** in the footer to change your choice. Turning optional cookies off deletes the saved offer and quiz cookies. The website and quiz continue to work without saving those preferences between visits.
+
+The waitlist form is hosted by Tally. Opening the waitlist page loads the form from Tally, which receives the technical information needed to serve it. Details you submit are processed by Tally for the Baby Steps waitlist under [Tally’s privacy notice](https://tally.so/help/privacy-policy). Website cookie settings apply to Baby Steps cookies; they do not control storage on third-party domains.
 
 ## 1. Information We Collect
 

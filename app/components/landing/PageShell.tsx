@@ -12,12 +12,15 @@ interface PageShellProps {
 
 export function PageShell({ children, showPersonalization = true }: PageShellProps) {
   return (
-    <main className="landing-page">
+    <div className="landing-page">
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <SiteHeader />
       <AnnouncementBanner />
-      {children}
-      {showPersonalization ? <PersonalizationSection /> : null}
+      <main id="main-content" tabIndex={-1}>
+        {children}
+        {showPersonalization ? <PersonalizationSection /> : null}
+      </main>
       <SiteFooter />
-    </main>
+    </div>
   );
 }

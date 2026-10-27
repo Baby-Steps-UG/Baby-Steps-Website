@@ -1,12 +1,24 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { readPreference, savePreference } from "../../lib/site-preferences";
+import { useCookiePreferences } from "./CookiePreferences";
 
 const ANNOUNCEMENT_HEIGHT_CSS_VAR = "--announcement-banner-height";
 
 export function AnnouncementBanner() {
   const [isVisible, setIsVisible] = useState(true);
   const bannerRef = useRef<HTMLElement | null>(null);
+  const { consent, ready } = useCookiePreferences();
+
+  useEffect(() => {
+    if (ready && readPreference("offer") === "yes") setIsVisible(false);
+  }, [ready, consent]);
+
+  useEffect(() => {
+    if (!isVisible) savePreference("offer", "yes");
+  }, [isVisible, consent]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -47,8 +59,7 @@ export function AnnouncementBanner() {
     >
       <div className="announcement-inner">
         <p className="announcement-copy">
-          <span className="announcement-kicker">For early explorers</span>
-          Join the waitlist and receive a <strong>2-month Premium trial</strong> at launch.
+          <Link href="/waitlist">Join the waitlist for a <strong>2-month Premium trial</strong> at launch.</Link>
         </p>
         <button
           type="button"

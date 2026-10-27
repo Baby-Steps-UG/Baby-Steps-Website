@@ -29,15 +29,9 @@ export function WaitlistModal({ isOpen, joined, onClose, onSubmit }: WaitlistMod
         >
           x
         </button>
-
-        <span className="section-label">Coming Soon</span>
         <h3 className="waitlist-title" id="waitlist-title">
           Join the Baby Steps waitlist
         </h3>
-        <p className="waitlist-text">
-          Baby Steps for ages 3-12 is almost here. Leave your details and we will send launch
-          updates for Android and iOS.
-        </p>
 
         {joined ? (
           <p className="waitlist-success">

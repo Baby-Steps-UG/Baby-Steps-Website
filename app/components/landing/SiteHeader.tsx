@@ -2,22 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 import { BrandLogo } from "./BrandLogo";
 
 const navItems = [
-  { label: "For Parents", href: "/for-parents" },
-  { label: "Pricing · Soon", href: "/pricing" },
-  { label: "Schools · Soon", href: "/for-schools" },
-  { label: "Luganda", href: "/languages" },
   { label: "About", href: "/about" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "For parents", href: "/for-parents" },
+  { label: "For schools", href: "/for-schools" },
+  { label: "Languages", href: "/languages" },
 ];
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const mobileMenuId = useId();
+  const menuButton = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -31,6 +32,7 @@ export function SiteHeader() {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsMenuOpen(false);
+        menuButton.current?.focus();
       }
     };
 
@@ -61,7 +63,7 @@ export function SiteHeader() {
             ))}
             <li>
               <Link className="nav-cta" href="/waitlist">
-                Get early access <span aria-hidden="true">↗</span>
+                Join the waitlist <span aria-hidden="true">↗</span>
               </Link>
             </li>
           </ul>
@@ -70,6 +72,7 @@ export function SiteHeader() {
         <button
           type="button"
           className="menu-toggle"
+          ref={menuButton}
           aria-expanded={isMenuOpen}
           aria-controls={mobileMenuId}
           onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -85,6 +88,8 @@ export function SiteHeader() {
 
       <nav
         id={mobileMenuId}
+        hidden={!isMenuOpen}
+        inert={!isMenuOpen}
         className={`mobile-nav ${isMenuOpen ? "open" : ""}`}
         aria-label="Primary mobile"
       >
@@ -103,7 +108,7 @@ export function SiteHeader() {
           ))}
           <li>
             <Link className="nav-cta mobile-nav-cta" href="/waitlist" onClick={() => setIsMenuOpen(false)}>
-              Get early access <span aria-hidden="true">↗</span>
+              Join the waitlist <span aria-hidden="true">↗</span>
             </Link>
           </li>
         </ul>

@@ -30,9 +30,7 @@ export function TestimonialsSection() {
     <section className="section testimonials-section" id="testimonials">
       <div className="section-inner">
         <div className="section-heading centered compact-heading">
-          <span className="section-label">From the community</span>
-          <h2 className="section-title">Small voices. <span className="accent-blue">Big confidence.</span></h2>
-          <p className="section-subtitle">What Ugandan families and teachers are noticing.</p>
+          <h2 className="section-title">From parents & teachers</h2>
         </div>
 
         <div className="testimonials-grid">

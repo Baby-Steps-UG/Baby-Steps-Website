@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
+import { CookiePreferencesProvider } from "./components/landing/CookiePreferences";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -11,7 +12,7 @@ const quicksand = Quicksand({
 export const metadata: Metadata = {
   metadataBase: new URL("https://babystepslearn.com"),
   title: {
-    default: "Baby Steps | Small steps. Big roots.",
+    default: "Baby Steps | Luganda learning for kids",
     template: "%s | Baby Steps",
   },
   description:
@@ -31,13 +32,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_UG",
     siteName: "Baby Steps",
-    title: "Baby Steps | Small steps. Big roots.",
+    title: "Baby Steps | Luganda learning for kids",
     description: "Mother-tongue learning made joyful for Ugandan children.",
-    images: [{ url: "/og.png", width: 1732, height: 909, alt: "Baby Steps — Small steps. Big roots." }],
+    images: [{ url: "/og.png", width: 1732, height: 909, alt: "Baby Steps Luganda learning app" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Baby Steps | Small steps. Big roots.",
+    title: "Baby Steps | Luganda learning for kids",
     description: "Mother-tongue learning made joyful for Ugandan children.",
     images: ["/og.png"],
   },
@@ -49,9 +50,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${quicksand.variable} antialiased`}>
-        {children}
+        <CookiePreferencesProvider>{children}</CookiePreferencesProvider>
       </body>
     </html>
   );

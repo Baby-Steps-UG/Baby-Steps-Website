@@ -4,42 +4,38 @@ import Link from "next/link";
 const playMoments = [
   {
     src: "/app_screenshots/portrait_stories.png",
-    title: "A Luganda story to follow",
-    detail: "Listen, read, and meet familiar words in a simple story flow.",
+    title: "Luganda stories",
   },
   {
     src: "/app_screenshots/landscape_word_game.png",
-    title: "Build the word",
-    detail: "Turn a familiar phrase into a hands-on spelling challenge.",
+    title: "Word games",
   },
   {
     src: "/app_screenshots/landscape_quiz_game.png",
-    title: "See it. Hear it. Recall it.",
-    detail: "Move between Luganda and English with audio support and gentle pacing.",
+    title: "Vocabulary quizzes",
   },
   {
     src: "/app_screenshots/landscape_coloring_studio.png",
-    title: "Create with the new word",
-    detail: "Bring ‘Oli otya?’ into a playful colouring activity children can save and share.",
+    title: "Colouring",
   },
 ];
 
 const parentScreens = [
   {
     src: "/app_screenshots/portrait_parent_dashboard.png",
-    label: "A calm weekly overview",
+    label: "Weekly overview",
   },
   {
     src: "/app_screenshots/portrait_child_profiles.png",
-    label: "Profiles for every child",
+    label: "Child profiles",
   },
   {
     src: "/app_screenshots/portrait_child_activities.png",
-    label: "All activity in one place",
+    label: "Activity history",
   },
   {
     src: "/app_screenshots/portrait_individual_child_profile.png",
-    label: "Progress without pressure",
+    label: "Learning progress",
   },
 ];
 
@@ -49,33 +45,15 @@ export function FeaturesSection() {
       <div className="section-inner inside-app-inner">
         <div className="section-heading split-heading inside-app-heading">
           <div>
-            <span className="section-label section-label-light">Inside Baby Steps</span>
             <h2 className="section-title">
-              Learning that looks like <span>play.</span>
+              Explore the app
             </h2>
-          </div>
-          <div className="inside-app-intro">
-            <p>
-              Every tap has a purpose. Children explore at their own pace while Shana keeps the
-              experience warm, encouraging, and easy to understand.
-            </p>
-            <span className="real-screen-note"><i /> Real screens from the Baby Steps app</span>
           </div>
         </div>
 
         <div className="app-feature-stage">
           <div className="app-feature-copy">
-            <span className="feature-count">01 / PLAY</span>
-            <h3>A small world of big discoveries</h3>
-            <p>
-              The Luganda learning hub brings stories, word games, quizzes, and creative activities
-              into one clear place children can navigate with confidence.
-            </p>
-            <ul>
-              <li>Clear, child-friendly navigation</li>
-              <li>Short activities with joyful feedback</li>
-              <li>Familiar language and local context</li>
-            </ul>
+            <h3>The learning hub</h3>
           </div>
 
           <figure className="app-feature-screen">
@@ -87,12 +65,11 @@ export function FeaturesSection() {
               height={1080}
               unoptimized
             />
-            <figcaption>One clear home for the Luganda learning journey</figcaption>
           </figure>
         </div>
 
         <div className="play-moment-grid">
-          {playMoments.map((moment, index) => (
+          {playMoments.map((moment) => (
             <figure className="play-moment-card" key={moment.title}>
               <div className="play-moment-image">
                 <Image
@@ -104,8 +81,7 @@ export function FeaturesSection() {
                 />
               </div>
               <figcaption>
-                <span>0{index + 2}</span>
-                <div><strong>{moment.title}</strong><p>{moment.detail}</p></div>
+                <div><strong>{moment.title}</strong></div>
               </figcaption>
             </figure>
           ))}
@@ -113,12 +89,7 @@ export function FeaturesSection() {
 
         <div className="parent-gate-feature">
           <div className="parent-gate-copy">
-            <span className="feature-count">06 / SAFE BY DESIGN</span>
-            <h3>Child mode stays for children.</h3>
-            <p>
-              A quick grown-up puzzle creates a thoughtful pause before leaving the child
-              experience—keeping settings and family controls in the right hands.
-            </p>
+            <h3>Parent-only access</h3>
           </div>
           <figure>
             <Image
@@ -128,20 +99,14 @@ export function FeaturesSection() {
               height={1080}
               unoptimized
             />
-            <figcaption>Parent access is intentionally separate from child mode.</figcaption>
           </figure>
         </div>
 
         <div className="parent-view-panel">
           <div className="parent-view-copy">
-            <span className="section-label">For grown-ups</span>
-            <h3>Progress, without the guesswork.</h3>
-            <p>
-              A focused parent space makes profiles, activity, and next steps easy to understand—
-              so encouragement can stay simple and specific.
-            </p>
+            <h3>Parent dashboard</h3>
             <Link href="/for-parents" className="inline-link">
-              Explore the parent experience <span aria-hidden="true">→</span>
+              Explore parent features <span aria-hidden="true">→</span>
             </Link>
           </div>
 

@@ -1,20 +1,18 @@
+import type { Metadata } from "next";
 import { PageShell } from "../components/landing/PageShell";
 import { PageHero } from "../components/landing/PageHero";
 import { ParentsPageContent } from "../components/landing/ParentsPageContent";
+
+export const metadata: Metadata = { title: "For parents" };
 
 export default function ForParentsPage() {
   return (
     <PageShell>
       <PageHero
         variant="parents"
-        label="For Parents"
-        title="Support every step of your child's language journey"
-        subtitle="Give your child a joyful, familiar way to build mother tongue confidence from ages 3 to 12."
-        highlights={[
-          "Short daily sessions",
-          "Progress you can understand quickly",
-          "Learning rooted in Ugandan life",
-        ]}
+        label="For parents"
+        title="Luganda learning at home"
+        highlights={["Ages 3–12", "Individual child profiles", "Parent controls"]}
       />
       <ParentsPageContent />
     </PageShell>

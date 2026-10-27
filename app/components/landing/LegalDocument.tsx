@@ -4,8 +4,6 @@ import type { ReactNode } from "react";
 
 interface LegalDocumentProps {
   source: "privacy_policy.md" | "terms_of_service.md";
-  eyebrow: string;
-  summary: string;
 }
 
 interface HeadingItem {
@@ -49,7 +47,7 @@ function renderInline(text: string): ReactNode[] {
   });
 }
 
-export function LegalDocument({ source, eyebrow, summary }: LegalDocumentProps) {
+export function LegalDocument({ source }: LegalDocumentProps) {
   const markdown = readFileSync(path.join(process.cwd(), "legal", source), "utf8").replace(/\r\n/g, "\n");
   const lines = markdown.split("\n");
   const headings: HeadingItem[] = lines
@@ -102,12 +100,6 @@ export function LegalDocument({ source, eyebrow, summary }: LegalDocumentProps) 
 
   return (
     <section className="legal-page">
-      <div className="legal-hero">
-        <div className="legal-hero-inner">
-          <span className="section-label">{eyebrow}</span>
-          <p>{summary}</p>
-        </div>
-      </div>
 
       <div className="legal-layout">
         <aside className="legal-toc" aria-label="On this page">
@@ -115,7 +107,7 @@ export function LegalDocument({ source, eyebrow, summary }: LegalDocumentProps) 
           <nav>
             {headings.map((heading) => <a href={`#${heading.id}`} key={heading.id}>{heading.text}</a>)}
           </nav>
-          <a className="legal-contact" href="mailto:hello@babystepslearn.com">Need help? Email us →</a>
+          <a className="legal-contact" href="mailto:hello@babystepslearn.com">Email us →</a>
         </aside>
         <article className="legal-content">{blocks}</article>
       </div>

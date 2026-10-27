@@ -12,16 +12,13 @@ export default function NotFound() {
             <h1 className="section-title centered" id="not-found-heading">
               Page not found
             </h1>
-            <p className="section-subtitle centered not-found-subtitle">
-              The page you are looking for does not exist or may have been moved.
-            </p>
 
             <div className="not-found-actions">
               <Link className="btn-primary" href="/">
-                Back to Home
+                Back to home
               </Link>
               <Link className="not-found-link" href="/waitlist">
-                Go to Waitlist
+                Join the waitlist
               </Link>
             </div>
           </div>

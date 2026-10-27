@@ -2,23 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { BrandLogo } from "./BrandLogo";
+import { CookieSettingsButton } from "./CookiePreferences";
 
 const footerColumns = [
   {
     title: "Explore",
     links: [
-      { label: "For Parents", href: "/for-parents" },
-      { label: "For Schools (Soon)", href: "/for-schools" },
-      { label: "Luganda First", href: "/languages" },
-      { label: "Pricing (Soon)", href: "/pricing" },
+      { label: "For parents", href: "/for-parents" },
+      { label: "For schools", href: "/for-schools" },
+      { label: "Luganda", href: "/languages" },
+      { label: "Pricing", href: "/pricing" },
     ],
   },
   {
     title: "Baby Steps",
     links: [
-      { label: "Our Story", href: "/about" },
-      { label: "Join the Waitlist", href: "/waitlist" },
-      { label: "Contact Us", href: "mailto:hello@babystepslearn.com" },
+      { label: "About", href: "/about" },
+      { label: "Join the waitlist", href: "/waitlist" },
+      { label: "Luganda pilot", href: "/waitlist/pilot" },
+      { label: "Contact", href: "mailto:hello@babystepslearn.com" },
     ],
   },
   {
@@ -41,15 +43,10 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-inner">
-        <div className="footer-topline"><span>Learn it.</span><span>Love it.</span><strong>Keep it alive.</strong></div>
 
         <div className="footer-grid">
           <div className="footer-brand-block">
             <BrandLogo href="/" variant="main" className="footer-logo" />
-            <p>
-              Helping Ugandan children grow in language, identity, and confidence—one joyful step
-              at a time.
-            </p>
             <a className="footer-email" href="mailto:hello@babystepslearn.com">hello@babystepslearn.com</a>
             <div className="social-row">
               {socialLinks.map((social) => (
@@ -62,7 +59,7 @@ export function SiteFooter() {
 
           {footerColumns.map((column) => (
             <div className="footer-col" key={column.title}>
-              <h4>{column.title}</h4>
+              <h2>{column.title}</h2>
               <ul>
                 {column.links.map((link) => (
                   <li key={link.label}>
@@ -75,8 +72,8 @@ export function SiteFooter() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 Baby Steps. All rights reserved.</span>
-          <span className="footer-credit">Made with care in Uganda</span>
+          <span>© 2026 Baby Steps</span>
+          <CookieSettingsButton />
         </div>
       </div>
     </footer>

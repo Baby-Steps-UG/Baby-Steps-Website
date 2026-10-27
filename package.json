@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --experimental-strip-types --test scripts/*.test.mjs",
+    "check:routes": "node scripts/check-routes.mjs"
   },
   "dependencies": {
     "next": "16.2.4",
